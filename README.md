@@ -1,5 +1,7 @@
 # Birbal Lens
 
+# Deployed on https://loan-scoring-web.vercel.app/
+
 An explainable personal-loan screening prototype for Indian borrowers.
 
 Repository: [CRAFTYPROGRAMMER826/Loan-Scoring](https://github.com/CRAFTYPROGRAMMER826/Loan-Scoring)
@@ -9,7 +11,6 @@ It answers:
 > “Based on public rules, which lenders are worth investigating—and why?”
 
 It does **not** claim bank approval. Final underwriting still depends on private lender policies, complete bureau data, fraud checks and document verification.
-
 
 ## What the model returns
 
@@ -24,11 +25,11 @@ It does **not** claim bank approval. Final underwriting still depends on private
 
 ## Decision labels
 
-| Label | Meaning |
-|---|---|
-| `passes_public_rules` | No captured hard public rule failed. Approval is still unknown. |
-| `fails_public_rule` | At least one published requirement, amount limit or tenure limit failed. |
-| `insufficient_public_data` | A required applicant value or stable lender rule is unavailable. |
+| Label                      | Meaning                                                                  |
+| -------------------------- | ------------------------------------------------------------------------ |
+| `passes_public_rules`      | No captured hard public rule failed. Approval is still unknown.          |
+| `fails_public_rule`        | At least one published requirement, amount limit or tenure limit failed. |
+| `insufficient_public_data` | A required applicant value or stable lender rule is unavailable.         |
 
 ## How the screening works
 
@@ -102,12 +103,12 @@ Selection factors:
 - Mix of public-sector banks, private banks, NBFCs and digital lenders.
 - Sufficient public material to research or an important absence worth documenting.
 
-| Group | Lenders |
-|---|---|
-| Public-sector banks | SBI, Bank of Baroda, Punjab National Bank, Canara Bank |
-| Private banks | HDFC Bank, ICICI Bank, Axis Bank, Kotak Mahindra Bank, IDFC FIRST Bank, IndusInd Bank, YES BANK, Federal Bank, RBL Bank |
-| NBFCs | Bajaj Finance, Tata Capital, Aditya Birla Finance, L&T Finance, SMFG India Credit, HDB Financial Services |
-| Digital-first | Navi |
+| Group               | Lenders                                                                                                                 |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Public-sector banks | SBI, Bank of Baroda, Punjab National Bank, Canara Bank                                                                  |
+| Private banks       | HDFC Bank, ICICI Bank, Axis Bank, Kotak Mahindra Bank, IDFC FIRST Bank, IndusInd Bank, YES BANK, Federal Bank, RBL Bank |
+| NBFCs               | Bajaj Finance, Tata Capital, Aditya Birla Finance, L&T Finance, SMFG India Credit, HDB Financial Services               |
+| Digital-first       | Navi                                                                                                                    |
 
 ## Evidence policy
 
@@ -133,37 +134,37 @@ See `data/calculator_observations.csv` and `DATA_AUDIT.md` for the research trai
 
 ## Input datapoints
 
-| Variable | Example | Meaning | Source |
-|---|---:|---|---|
-| `employment_type` | `salaried` | Salaried or self-employed rule segment | Applicant |
-| `age_years` | `30` | Completed age today | Applicant / DOB document |
-| `monthly_income_inr` | `80000` | Regular net monthly income | Salary slip / bank statement |
-| `existing_monthly_emis_inr` | `10000` | Current recurring debt payments | Bureau / bank statement |
-| `cibil_score` | `780` or `null` | Optional bureau score | Credit bureau report |
-| `total_work_months` | `60` | Total salaried experience | Employment documents |
-| `current_job_months` | `24` | Time with current employer | Employment documents |
-| `business_vintage_months` | `84` | Current business operating history | ITR / GST / registration |
-| `relationship_lender_ids` | `["L001"]` | Existing relationships required by scoped products | Applicant / bank statement |
-| `resident_indian` | `true` | Residency requirement | KYC documents |
-| `requested_amount_inr` | `500000` | Loan amount requested | Applicant |
-| `requested_tenure_months` | `36` | Preferred repayment period | Applicant |
+| Variable                    |         Example | Meaning                                            | Source                       |
+| --------------------------- | --------------: | -------------------------------------------------- | ---------------------------- |
+| `employment_type`           |      `salaried` | Salaried or self-employed rule segment             | Applicant                    |
+| `age_years`                 |            `30` | Completed age today                                | Applicant / DOB document     |
+| `monthly_income_inr`        |         `80000` | Regular net monthly income                         | Salary slip / bank statement |
+| `existing_monthly_emis_inr` |         `10000` | Current recurring debt payments                    | Bureau / bank statement      |
+| `cibil_score`               | `780` or `null` | Optional bureau score                              | Credit bureau report         |
+| `total_work_months`         |            `60` | Total salaried experience                          | Employment documents         |
+| `current_job_months`        |            `24` | Time with current employer                         | Employment documents         |
+| `business_vintage_months`   |            `84` | Current business operating history                 | ITR / GST / registration     |
+| `relationship_lender_ids`   |      `["L001"]` | Existing relationships required by scoped products | Applicant / bank statement   |
+| `resident_indian`           |          `true` | Residency requirement                              | KYC documents                |
+| `requested_amount_inr`      |        `500000` | Loan amount requested                              | Applicant                    |
+| `requested_tenure_months`   |            `36` | Preferred repayment period                         | Applicant                    |
 
 The complete dictionary, units, types and allowed values are in `data/input_variables.csv`.
 
 ## Test profiles
 
-| Profile | Edge case | Pass | Fail | Unknown | Best public-rule match |
-|---|---|---:|---:|---:|---|
-| P001 | Strong salaried | 17 | 2 | 1 | Canara Bank |
-| P002 | Low CIBIL score | 12 | 7 | 1 | Canara Bank |
-| P003 | Very high existing EMI | 13 | 6 | 1 | Axis Bank |
-| P004 | Only 3 months in current job | 11 | 8 | 1 | Canara Bank |
-| P005 | Established self-employed | 6 | 13 | 1 | ICICI Bank |
-| P006 | New self-employed business | 5 | 14 | 1 | IDFC FIRST Bank |
-| P007 | Age near maturity limit | 11 | 8 | 1 | Canara Bank |
-| P008 | Low monthly income | 5 | 14 | 1 | Canara Bank |
-| P009 | No lender relationship | 15 | 4 | 1 | Canara Bank |
-| P010 | Age below most limits | 1 | 18 | 1 | Canara Bank |
+| Profile | Edge case                    | Pass | Fail | Unknown | Best public-rule match |
+| ------- | ---------------------------- | ---: | ---: | ------: | ---------------------- |
+| P001    | Strong salaried              |   17 |    2 |       1 | Canara Bank            |
+| P002    | Low CIBIL score              |   12 |    7 |       1 | Canara Bank            |
+| P003    | Very high existing EMI       |   13 |    6 |       1 | Axis Bank              |
+| P004    | Only 3 months in current job |   11 |    8 |       1 | Canara Bank            |
+| P005    | Established self-employed    |    6 |   13 |       1 | ICICI Bank             |
+| P006    | New self-employed business   |    5 |   14 |       1 | IDFC FIRST Bank        |
+| P007    | Age near maturity limit      |   11 |    8 |       1 | Canara Bank            |
+| P008    | Low monthly income           |    5 |   14 |       1 | Canara Bank            |
+| P009    | No lender relationship       |   15 |    4 |       1 | Canara Bank            |
+| P010    | Age below most limits        |    1 |   18 |       1 | Canara Bank            |
 
 “Best” means best under the captured public rules for that exact test profile. It is not a recommendation or approval forecast.
 
@@ -246,7 +247,6 @@ node --check web/dist/app.js
 ```
 
 Expected result: 20 lender rows, 86 sourced rule rows, 10 generated profile outputs and 10 passing tests.
-
 
 ## Limitations
 
