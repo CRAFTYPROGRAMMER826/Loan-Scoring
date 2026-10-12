@@ -12,7 +12,25 @@
       "public_maximum": {
         "amount_inr": 1556000,
         "basis": "published minimum net-take-home rule",
-        "advertised_product_max_inr": 5000000
+        "advertised_product_max_inr": 5000000,
+        "calculation": "New EMI room = ₹80,000 income − ₹10,000 existing EMIs − ₹20,000 required residual income = ₹50,000/month; converted to principal at 9.7% for 36 months",
+        "components": [
+          {
+            "basis": "advertised product maximum",
+            "amount_inr": 5000000,
+            "calculation": "Published product ceiling = ₹5,000,000"
+          },
+          {
+            "basis": "published minimum net-take-home rule",
+            "amount_inr": 1556346,
+            "calculation": "New EMI room = ₹80,000 income − ₹10,000 existing EMIs − ₹20,000 required residual income = ₹50,000/month; converted to principal at 9.7% for 36 months"
+          },
+          {
+            "basis": "published salary multiple",
+            "amount_inr": 2000000,
+            "calculation": "Salary-multiple cap = ₹80,000 NMI × 25 = ₹2,000,000"
+          }
+        ]
       },
       "advertised_rate_pct": {
         "minimum": 9.7,
@@ -49,9 +67,27 @@
         "failure_reasons": [],
         "missing_inputs": [],
         "public_maximum": {
-          "amount_inr": 1301000,
-          "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 5000000
+          "amount_inr": 1611000,
+          "basis": "published proposed EMI/NMI ratio",
+          "advertised_product_max_inr": 5000000,
+          "calculation": "Proposed new-loan EMI ceiling = 65% of ₹80,000 NMI = ₹52,000/month; converted to principal at 10% for 36 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule.",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published proposed EMI/NMI ratio",
+              "amount_inr": 1611544,
+              "calculation": "Proposed new-loan EMI ceiling = 65% of ₹80,000 NMI = ₹52,000/month; converted to principal at 10% for 36 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule."
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 2400000,
+              "calculation": "Salary-multiple cap = ₹80,000 NMI × 30 = ₹2,400,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -63,7 +99,8 @@
           "maximum": 84
         },
         "advisories": [
-          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass."
+          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass.",
+          "SBI publishes a proposed EMI/NMI ceiling of 65%, not a FOIR definition. The applicant-specific illustration therefore limits the proposed new-loan EMI to 65% of NMI and does not subtract existing EMIs under that ratio. Existing obligations may still affect SBI's internal underwriting."
         ],
         "evidence": [
           {
@@ -84,7 +121,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -117,7 +156,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -150,7 +197,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -188,7 +243,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -226,7 +289,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -260,7 +331,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -272,13 +351,13 @@
           "maximum": 48
         },
         "advisories": [
-          "Rules come from an amount-specific ₹50,000 page. The wider branch product advertises up to ₹50 lakh; this row intentionally scopes the online journey to ₹5 lakh.",
-          "Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
+          "This row models the Online Instant Personal Loan only: the official page limits that route to ₹30,000–₹5 lakh and 12–48 months. The same page separately advertises the broader personal-loan product at ₹30,000–₹50 lakh and 12–60 months; those wider terms are not mixed into this row.",
+          "Rules come from an amount-specific ₹50,000 page. Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
         ],
         "evidence": [
           {
             "label": "Official ₹50,000 journey",
-            "url": "https://www.indusind.com/in/en/personal/loans/personal-loan/50000-personal-loan.html",
+            "url": "https://www.indusind.bank.in/in/en/personal/loans/personal-loan/50000-personal-loan.html",
             "accessed_date": "2026-10-12"
           }
         ],
@@ -294,7 +373,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.85,
@@ -329,7 +416,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2500000
+          "advertised_product_max_inr": 2500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2500000,
+              "calculation": "Published product ceiling = ₹2,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -362,7 +457,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 18.0,
@@ -397,7 +500,20 @@
         "public_maximum": {
           "amount_inr": 680000,
           "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": "New EMI room = 40% of ₹80,000 income − ₹10,000 existing EMIs = ₹22,000/month; converted to principal at 10.15% for 36 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 680321,
+              "calculation": "New EMI room = 40% of ₹80,000 income − ₹10,000 existing EMIs = ₹22,000/month; converted to principal at 10.15% for 36 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.15,
@@ -431,7 +547,20 @@
         "public_maximum": {
           "amount_inr": 1000000,
           "basis": "advertised product maximum",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "Published product ceiling = ₹1,000,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 1200000,
+              "calculation": "Salary-multiple cap = ₹80,000 NMI × 15 = ₹1,200,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -464,7 +593,25 @@
         "public_maximum": {
           "amount_inr": 1556000,
           "basis": "published minimum net-take-home rule",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": "New EMI room = ₹80,000 income − ₹10,000 existing EMIs − ₹20,000 required residual income = ₹50,000/month; converted to principal at 9.7% for 36 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published minimum net-take-home rule",
+              "amount_inr": 1556346,
+              "calculation": "New EMI room = ₹80,000 income − ₹10,000 existing EMIs − ₹20,000 required residual income = ₹50,000/month; converted to principal at 9.7% for 36 months"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 2000000,
+              "calculation": "Salary-multiple cap = ₹80,000 NMI × 25 = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.7,
@@ -502,7 +649,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5500000
+          "advertised_product_max_inr": 5500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5500000,
+              "calculation": "Published product ceiling = ₹5,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -535,7 +690,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3500000
+          "advertised_product_max_inr": 3500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3500000,
+              "calculation": "Published product ceiling = ₹3,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -568,7 +731,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -602,7 +767,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3000000
+          "advertised_product_max_inr": 3000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3000000,
+              "calculation": "Published product ceiling = ₹3,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -647,7 +820,20 @@
         "public_maximum": {
           "amount_inr": 1000000,
           "basis": "advertised product maximum",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "Published product ceiling = ₹1,000,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 1135900,
+              "calculation": "New EMI room = 60% of ₹80,000 income − ₹10,000 existing EMIs = ₹38,000/month; converted to principal at 12.5% for 36 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 12.5,
@@ -681,7 +867,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -721,7 +915,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -764,7 +966,25 @@
       "public_maximum": {
         "amount_inr": 1945000,
         "basis": "published minimum net-take-home rule",
-        "advertised_product_max_inr": 5000000
+        "advertised_product_max_inr": 5000000,
+        "calculation": "New EMI room = ₹90,000 income − ₹5,000 existing EMIs − ₹22,500 required residual income = ₹62,500/month; converted to principal at 9.7% for 36 months",
+        "components": [
+          {
+            "basis": "advertised product maximum",
+            "amount_inr": 5000000,
+            "calculation": "Published product ceiling = ₹5,000,000"
+          },
+          {
+            "basis": "published minimum net-take-home rule",
+            "amount_inr": 1945433,
+            "calculation": "New EMI room = ₹90,000 income − ₹5,000 existing EMIs − ₹22,500 required residual income = ₹62,500/month; converted to principal at 9.7% for 36 months"
+          },
+          {
+            "basis": "published salary multiple",
+            "amount_inr": 2250000,
+            "calculation": "Salary-multiple cap = ₹90,000 NMI × 25 = ₹2,250,000"
+          }
+        ]
       },
       "advertised_rate_pct": {
         "minimum": 9.7,
@@ -803,9 +1023,27 @@
         ],
         "missing_inputs": [],
         "public_maximum": {
-          "amount_inr": 1658000,
-          "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 5000000
+          "amount_inr": 1812000,
+          "basis": "published proposed EMI/NMI ratio",
+          "advertised_product_max_inr": 5000000,
+          "calculation": "Proposed new-loan EMI ceiling = 65% of ₹90,000 NMI = ₹58,500/month; converted to principal at 10% for 36 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule.",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published proposed EMI/NMI ratio",
+              "amount_inr": 1812987,
+              "calculation": "Proposed new-loan EMI ceiling = 65% of ₹90,000 NMI = ₹58,500/month; converted to principal at 10% for 36 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule."
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 2700000,
+              "calculation": "Salary-multiple cap = ₹90,000 NMI × 30 = ₹2,700,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -817,7 +1055,8 @@
           "maximum": 84
         },
         "advisories": [
-          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass."
+          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass.",
+          "SBI publishes a proposed EMI/NMI ceiling of 65%, not a FOIR definition. The applicant-specific illustration therefore limits the proposed new-loan EMI to 65% of NMI and does not subtract existing EMIs under that ratio. Existing obligations may still affect SBI's internal underwriting."
         ],
         "evidence": [
           {
@@ -838,7 +1077,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -871,7 +1112,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -904,7 +1153,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -942,7 +1199,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -980,7 +1245,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -1016,7 +1289,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -1028,13 +1309,13 @@
           "maximum": 48
         },
         "advisories": [
-          "Rules come from an amount-specific ₹50,000 page. The wider branch product advertises up to ₹50 lakh; this row intentionally scopes the online journey to ₹5 lakh.",
-          "Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
+          "This row models the Online Instant Personal Loan only: the official page limits that route to ₹30,000–₹5 lakh and 12–48 months. The same page separately advertises the broader personal-loan product at ₹30,000–₹50 lakh and 12–60 months; those wider terms are not mixed into this row.",
+          "Rules come from an amount-specific ₹50,000 page. Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
         ],
         "evidence": [
           {
             "label": "Official ₹50,000 journey",
-            "url": "https://www.indusind.com/in/en/personal/loans/personal-loan/50000-personal-loan.html",
+            "url": "https://www.indusind.bank.in/in/en/personal/loans/personal-loan/50000-personal-loan.html",
             "accessed_date": "2026-10-12"
           }
         ],
@@ -1050,7 +1331,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.85,
@@ -1085,7 +1374,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2500000
+          "advertised_product_max_inr": 2500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2500000,
+              "calculation": "Published product ceiling = ₹2,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -1120,7 +1417,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 18.0,
@@ -1155,7 +1460,20 @@
         "public_maximum": {
           "amount_inr": 958000,
           "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": "New EMI room = 40% of ₹90,000 income − ₹5,000 existing EMIs = ₹31,000/month; converted to principal at 10.15% for 36 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 958634,
+              "calculation": "New EMI room = 40% of ₹90,000 income − ₹5,000 existing EMIs = ₹31,000/month; converted to principal at 10.15% for 36 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.15,
@@ -1189,7 +1507,20 @@
         "public_maximum": {
           "amount_inr": 1000000,
           "basis": "advertised product maximum",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "Published product ceiling = ₹1,000,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 1350000,
+              "calculation": "Salary-multiple cap = ₹90,000 NMI × 15 = ₹1,350,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -1222,7 +1553,25 @@
         "public_maximum": {
           "amount_inr": 1945000,
           "basis": "published minimum net-take-home rule",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": "New EMI room = ₹90,000 income − ₹5,000 existing EMIs − ₹22,500 required residual income = ₹62,500/month; converted to principal at 9.7% for 36 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published minimum net-take-home rule",
+              "amount_inr": 1945433,
+              "calculation": "New EMI room = ₹90,000 income − ₹5,000 existing EMIs − ₹22,500 required residual income = ₹62,500/month; converted to principal at 9.7% for 36 months"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 2250000,
+              "calculation": "Salary-multiple cap = ₹90,000 NMI × 25 = ₹2,250,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.7,
@@ -1262,7 +1611,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5500000
+          "advertised_product_max_inr": 5500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5500000,
+              "calculation": "Published product ceiling = ₹5,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -1295,7 +1652,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3500000
+          "advertised_product_max_inr": 3500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3500000,
+              "calculation": "Published product ceiling = ₹3,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -1328,7 +1693,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -1362,7 +1729,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3000000
+          "advertised_product_max_inr": 3000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3000000,
+              "calculation": "Published product ceiling = ₹3,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -1409,7 +1784,20 @@
         "public_maximum": {
           "amount_inr": 1000000,
           "basis": "advertised product maximum",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "Published product ceiling = ₹1,000,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 1464714,
+              "calculation": "New EMI room = 60% of ₹90,000 income − ₹5,000 existing EMIs = ₹49,000/month; converted to principal at 12.5% for 36 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 12.5,
@@ -1443,7 +1831,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -1483,7 +1879,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -1526,7 +1930,15 @@
       "public_maximum": {
         "amount_inr": null,
         "basis": "not publicly determinable",
-        "advertised_product_max_inr": 5000000
+        "advertised_product_max_inr": 5000000,
+        "calculation": null,
+        "components": [
+          {
+            "basis": "advertised product maximum",
+            "amount_inr": 5000000,
+            "calculation": "Published product ceiling = ₹5,000,000"
+          }
+        ]
       },
       "advertised_rate_pct": {
         "minimum": 9.99,
@@ -1559,15 +1971,31 @@
         "lender_id": "L001",
         "lender_name": "State Bank of India",
         "product_name": "SBI Personal Loan",
-        "decision": "fails_public_rule",
-        "failure_reasons": [
-          "Requested amount must not exceed the public maximum of 0; provided 1000000."
-        ],
+        "decision": "passes_public_rules",
+        "failure_reasons": [],
         "missing_inputs": [],
         "public_maximum": {
-          "amount_inr": 0,
-          "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 5000000
+          "amount_inr": 2400000,
+          "basis": "published salary multiple",
+          "advertised_product_max_inr": 5000000,
+          "calculation": "Salary-multiple cap = ₹80,000 NMI × 30 = ₹2,400,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published proposed EMI/NMI ratio",
+              "amount_inr": 2447399,
+              "calculation": "Proposed new-loan EMI ceiling = 65% of ₹80,000 NMI = ₹52,000/month; converted to principal at 10% for 60 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule."
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 2400000,
+              "calculation": "Salary-multiple cap = ₹80,000 NMI × 30 = ₹2,400,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -1579,7 +2007,8 @@
           "maximum": 84
         },
         "advisories": [
-          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass."
+          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass.",
+          "SBI publishes a proposed EMI/NMI ceiling of 65%, not a FOIR definition. The applicant-specific illustration therefore limits the proposed new-loan EMI to 65% of NMI and does not subtract existing EMIs under that ratio. Existing obligations may still affect SBI's internal underwriting."
         ],
         "evidence": [
           {
@@ -1600,7 +2029,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -1633,7 +2064,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -1666,7 +2105,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -1704,7 +2151,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -1742,7 +2197,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -1772,14 +2235,22 @@
         "product_name": "Online Instant Personal Loan",
         "decision": "fails_public_rule",
         "failure_reasons": [
-          "Requested amount must not exceed the public maximum of 500000; provided 1000000.",
+          "Requested amount must not exceed the calculated public-rule maximum of 500000; provided 1000000.",
           "Requested tenure must not exceed 48 months; provided 60."
         ],
         "missing_inputs": [],
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -1791,13 +2262,13 @@
           "maximum": 48
         },
         "advisories": [
-          "Rules come from an amount-specific ₹50,000 page. The wider branch product advertises up to ₹50 lakh; this row intentionally scopes the online journey to ₹5 lakh.",
-          "Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
+          "This row models the Online Instant Personal Loan only: the official page limits that route to ₹30,000–₹5 lakh and 12–48 months. The same page separately advertises the broader personal-loan product at ₹30,000–₹50 lakh and 12–60 months; those wider terms are not mixed into this row.",
+          "Rules come from an amount-specific ₹50,000 page. Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
         ],
         "evidence": [
           {
             "label": "Official ₹50,000 journey",
-            "url": "https://www.indusind.com/in/en/personal/loans/personal-loan/50000-personal-loan.html",
+            "url": "https://www.indusind.bank.in/in/en/personal/loans/personal-loan/50000-personal-loan.html",
             "accessed_date": "2026-10-12"
           }
         ],
@@ -1813,7 +2284,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.85,
@@ -1846,7 +2325,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2500000
+          "advertised_product_max_inr": 2500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2500000,
+              "calculation": "Published product ceiling = ₹2,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -1876,14 +2363,22 @@
         "decision": "fails_public_rule",
         "failure_reasons": [
           "Existing RBL savings/salary relationship must be True; provided False.",
-          "Requested amount must not exceed the public maximum of 500000; provided 1000000.",
+          "Requested amount must not exceed the calculated public-rule maximum of 500000; provided 1000000.",
           "Requested tenure must not exceed 36 months; provided 60."
         ],
         "missing_inputs": [],
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 18.0,
@@ -1912,13 +2407,26 @@
         "product_name": "Baroda Personal Loan — branch product",
         "decision": "fails_public_rule",
         "failure_reasons": [
-          "Requested amount must not exceed the public maximum of 0; provided 1000000."
+          "Requested amount must not exceed the calculated public-rule maximum of 0; provided 1000000."
         ],
         "missing_inputs": [],
         "public_maximum": {
           "amount_inr": 0,
           "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": "New EMI room = 40% of ₹80,000 income − ₹60,000 existing EMIs = ₹0/month; converted to principal at 10.15% for 60 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 0,
+              "calculation": "New EMI room = 40% of ₹80,000 income − ₹60,000 existing EMIs = ₹0/month; converted to principal at 10.15% for 60 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.15,
@@ -1952,7 +2460,20 @@
         "public_maximum": {
           "amount_inr": 1000000,
           "basis": "advertised product maximum",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "Published product ceiling = ₹1,000,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 1200000,
+              "calculation": "Salary-multiple cap = ₹80,000 NMI × 15 = ₹1,200,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -1981,13 +2502,31 @@
         "product_name": "Canara Budget — Prime/Delight",
         "decision": "fails_public_rule",
         "failure_reasons": [
-          "Requested amount must not exceed the public maximum of 0; provided 1000000."
+          "Requested amount must not exceed the calculated public-rule maximum of 0; provided 1000000."
         ],
         "missing_inputs": [],
         "public_maximum": {
           "amount_inr": 0,
           "basis": "published minimum net-take-home rule",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": "New EMI room = ₹80,000 income − ₹60,000 existing EMIs − ₹20,000 required residual income = ₹0/month; converted to principal at 9.7% for 60 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published minimum net-take-home rule",
+              "amount_inr": 0,
+              "calculation": "New EMI room = ₹80,000 income − ₹60,000 existing EMIs − ₹20,000 required residual income = ₹0/month; converted to principal at 9.7% for 60 months"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 2000000,
+              "calculation": "Salary-multiple cap = ₹80,000 NMI × 25 = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.7,
@@ -2025,7 +2564,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5500000
+          "advertised_product_max_inr": 5500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5500000,
+              "calculation": "Published product ceiling = ₹5,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -2058,7 +2605,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3500000
+          "advertised_product_max_inr": 3500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3500000,
+              "calculation": "Published product ceiling = ₹3,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -2091,7 +2646,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -2125,7 +2682,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3000000
+          "advertised_product_max_inr": 3000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3000000,
+              "calculation": "Published product ceiling = ₹3,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -2166,13 +2731,26 @@
         "product_name": "Personal Loan",
         "decision": "fails_public_rule",
         "failure_reasons": [
-          "Requested amount must not exceed the public maximum of 0; provided 1000000."
+          "Requested amount must not exceed the calculated public-rule maximum of 0; provided 1000000."
         ],
         "missing_inputs": [],
         "public_maximum": {
           "amount_inr": 0,
           "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "New EMI room = 60% of ₹80,000 income − ₹60,000 existing EMIs = ₹0/month; converted to principal at 12.5% for 60 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 0,
+              "calculation": "New EMI room = 60% of ₹80,000 income − ₹60,000 existing EMIs = ₹0/month; converted to principal at 12.5% for 60 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 12.5,
@@ -2206,7 +2784,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -2246,7 +2832,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -2289,7 +2883,25 @@
       "public_maximum": {
         "amount_inr": 978000,
         "basis": "published minimum net-take-home rule",
-        "advertised_product_max_inr": 5000000
+        "advertised_product_max_inr": 5000000,
+        "calculation": "New EMI room = ₹60,000 income − ₹0 existing EMIs − ₹15,000 required residual income = ₹45,000/month; converted to principal at 9.7% for 24 months",
+        "components": [
+          {
+            "basis": "advertised product maximum",
+            "amount_inr": 5000000,
+            "calculation": "Published product ceiling = ₹5,000,000"
+          },
+          {
+            "basis": "published minimum net-take-home rule",
+            "amount_inr": 978120,
+            "calculation": "New EMI room = ₹60,000 income − ₹0 existing EMIs − ₹15,000 required residual income = ₹45,000/month; converted to principal at 9.7% for 24 months"
+          },
+          {
+            "basis": "published salary multiple",
+            "amount_inr": 1500000,
+            "calculation": "Salary-multiple cap = ₹60,000 NMI × 25 = ₹1,500,000"
+          }
+        ]
       },
       "advertised_rate_pct": {
         "minimum": 9.7,
@@ -2329,8 +2941,26 @@
         "missing_inputs": [],
         "public_maximum": {
           "amount_inr": 845000,
-          "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 5000000
+          "basis": "published proposed EMI/NMI ratio",
+          "advertised_product_max_inr": 5000000,
+          "calculation": "Proposed new-loan EMI ceiling = 65% of ₹60,000 NMI = ₹39,000/month; converted to principal at 10% for 24 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule.",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published proposed EMI/NMI ratio",
+              "amount_inr": 845163,
+              "calculation": "Proposed new-loan EMI ceiling = 65% of ₹60,000 NMI = ₹39,000/month; converted to principal at 10% for 24 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule."
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 1800000,
+              "calculation": "Salary-multiple cap = ₹60,000 NMI × 30 = ₹1,800,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -2342,7 +2972,8 @@
           "maximum": 84
         },
         "advisories": [
-          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass."
+          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass.",
+          "SBI publishes a proposed EMI/NMI ceiling of 65%, not a FOIR definition. The applicant-specific illustration therefore limits the proposed new-loan EMI to 65% of NMI and does not subtract existing EMIs under that ratio. Existing obligations may still affect SBI's internal underwriting."
         ],
         "evidence": [
           {
@@ -2365,7 +2996,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -2398,7 +3031,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -2431,7 +3072,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -2469,7 +3118,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -2507,7 +3164,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -2543,7 +3208,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -2555,13 +3228,13 @@
           "maximum": 48
         },
         "advisories": [
-          "Rules come from an amount-specific ₹50,000 page. The wider branch product advertises up to ₹50 lakh; this row intentionally scopes the online journey to ₹5 lakh.",
-          "Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
+          "This row models the Online Instant Personal Loan only: the official page limits that route to ₹30,000–₹5 lakh and 12–48 months. The same page separately advertises the broader personal-loan product at ₹30,000–₹50 lakh and 12–60 months; those wider terms are not mixed into this row.",
+          "Rules come from an amount-specific ₹50,000 page. Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
         ],
         "evidence": [
           {
             "label": "Official ₹50,000 journey",
-            "url": "https://www.indusind.com/in/en/personal/loans/personal-loan/50000-personal-loan.html",
+            "url": "https://www.indusind.bank.in/in/en/personal/loans/personal-loan/50000-personal-loan.html",
             "accessed_date": "2026-10-12"
           }
         ],
@@ -2577,7 +3250,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.85,
@@ -2612,7 +3293,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2500000
+          "advertised_product_max_inr": 2500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2500000,
+              "calculation": "Published product ceiling = ₹2,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -2647,7 +3336,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 18.0,
@@ -2682,7 +3379,20 @@
         "public_maximum": {
           "amount_inr": 519000,
           "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": "New EMI room = 40% of ₹60,000 income − ₹0 existing EMIs = ₹24,000/month; converted to principal at 10.15% for 24 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 519321,
+              "calculation": "New EMI room = 40% of ₹60,000 income − ₹0 existing EMIs = ₹24,000/month; converted to principal at 10.15% for 24 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.15,
@@ -2716,7 +3426,20 @@
         "public_maximum": {
           "amount_inr": 900000,
           "basis": "published salary multiple",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "Salary-multiple cap = ₹60,000 NMI × 15 = ₹900,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 900000,
+              "calculation": "Salary-multiple cap = ₹60,000 NMI × 15 = ₹900,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -2749,7 +3472,25 @@
         "public_maximum": {
           "amount_inr": 978000,
           "basis": "published minimum net-take-home rule",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": "New EMI room = ₹60,000 income − ₹0 existing EMIs − ₹15,000 required residual income = ₹45,000/month; converted to principal at 9.7% for 24 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published minimum net-take-home rule",
+              "amount_inr": 978120,
+              "calculation": "New EMI room = ₹60,000 income − ₹0 existing EMIs − ₹15,000 required residual income = ₹45,000/month; converted to principal at 9.7% for 24 months"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 1500000,
+              "calculation": "Salary-multiple cap = ₹60,000 NMI × 25 = ₹1,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.7,
@@ -2787,7 +3528,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5500000
+          "advertised_product_max_inr": 5500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5500000,
+              "calculation": "Published product ceiling = ₹5,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -2822,7 +3571,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3500000
+          "advertised_product_max_inr": 3500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3500000,
+              "calculation": "Published product ceiling = ₹3,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -2855,7 +3612,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -2889,7 +3648,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3000000
+          "advertised_product_max_inr": 3000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3000000,
+              "calculation": "Published product ceiling = ₹3,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -2936,7 +3703,20 @@
         "public_maximum": {
           "amount_inr": 760000,
           "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "New EMI room = 60% of ₹60,000 income − ₹0 existing EMIs = ₹36,000/month; converted to principal at 12.5% for 24 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 760981,
+              "calculation": "New EMI room = 60% of ₹60,000 income − ₹0 existing EMIs = ₹36,000/month; converted to principal at 12.5% for 24 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 12.5,
@@ -2970,7 +3750,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -3010,7 +3798,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -3053,7 +3849,15 @@
       "public_maximum": {
         "amount_inr": null,
         "basis": "not publicly determinable",
-        "advertised_product_max_inr": 5000000
+        "advertised_product_max_inr": 5000000,
+        "calculation": null,
+        "components": [
+          {
+            "basis": "advertised product maximum",
+            "amount_inr": 5000000,
+            "calculation": "Published product ceiling = ₹5,000,000"
+          }
+        ]
       },
       "advertised_rate_pct": {
         "minimum": 9.99,
@@ -3088,9 +3892,27 @@
         ],
         "missing_inputs": [],
         "public_maximum": {
-          "amount_inr": 3055000,
-          "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 5000000
+          "amount_inr": 3844000,
+          "basis": "published proposed EMI/NMI ratio",
+          "advertised_product_max_inr": 5000000,
+          "calculation": "Proposed new-loan EMI ceiling = 65% of ₹150,000 NMI = ₹97,500/month; converted to principal at 10% for 48 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule.",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published proposed EMI/NMI ratio",
+              "amount_inr": 3844245,
+              "calculation": "Proposed new-loan EMI ceiling = 65% of ₹150,000 NMI = ₹97,500/month; converted to principal at 10% for 48 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule."
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 4500000,
+              "calculation": "Salary-multiple cap = ₹150,000 NMI × 30 = ₹4,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -3102,7 +3924,8 @@
           "maximum": 84
         },
         "advisories": [
-          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass."
+          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass.",
+          "SBI publishes a proposed EMI/NMI ceiling of 65%, not a FOIR definition. The applicant-specific illustration therefore limits the proposed new-loan EMI to 65% of NMI and does not subtract existing EMIs under that ratio. Existing obligations may still affect SBI's internal underwriting."
         ],
         "evidence": [
           {
@@ -3127,7 +3950,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -3160,7 +3985,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -3195,7 +4028,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -3236,7 +4077,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -3274,7 +4123,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -3304,13 +4161,21 @@
         "product_name": "Online Instant Personal Loan",
         "decision": "fails_public_rule",
         "failure_reasons": [
-          "Requested amount must not exceed the public maximum of 500000; provided 1200000."
+          "Requested amount must not exceed the calculated public-rule maximum of 500000; provided 1200000."
         ],
         "missing_inputs": [],
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -3322,13 +4187,13 @@
           "maximum": 48
         },
         "advisories": [
-          "Rules come from an amount-specific ₹50,000 page. The wider branch product advertises up to ₹50 lakh; this row intentionally scopes the online journey to ₹5 lakh.",
-          "Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
+          "This row models the Online Instant Personal Loan only: the official page limits that route to ₹30,000–₹5 lakh and 12–48 months. The same page separately advertises the broader personal-loan product at ₹30,000–₹50 lakh and 12–60 months; those wider terms are not mixed into this row.",
+          "Rules come from an amount-specific ₹50,000 page. Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
         ],
         "evidence": [
           {
             "label": "Official ₹50,000 journey",
-            "url": "https://www.indusind.com/in/en/personal/loans/personal-loan/50000-personal-loan.html",
+            "url": "https://www.indusind.bank.in/in/en/personal/loans/personal-loan/50000-personal-loan.html",
             "accessed_date": "2026-10-12"
           }
         ],
@@ -3346,7 +4211,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.85,
@@ -3382,7 +4255,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2500000
+          "advertised_product_max_inr": 2500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2500000,
+              "calculation": "Published product ceiling = ₹2,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -3413,14 +4294,22 @@
         "failure_reasons": [
           "Employment type 'self_employed' is outside the publicly documented segment ['salaried'].",
           "Existing RBL savings/salary relationship must be True; provided False.",
-          "Requested amount must not exceed the public maximum of 500000; provided 1200000.",
+          "Requested amount must not exceed the calculated public-rule maximum of 500000; provided 1200000.",
           "Requested tenure must not exceed 36 months; provided 48."
         ],
         "missing_inputs": [],
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 18.0,
@@ -3453,7 +4342,20 @@
         "public_maximum": {
           "amount_inr": 1572000,
           "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": "New EMI room = 40% of ₹150,000 income − ₹20,000 existing EMIs = ₹40,000/month; converted to principal at 10.15% for 48 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 1572655,
+              "calculation": "New EMI room = 40% of ₹150,000 income − ₹20,000 existing EMIs = ₹40,000/month; converted to principal at 10.15% for 48 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.15,
@@ -3483,13 +4385,26 @@
         "product_name": "Personal Loan for Public",
         "decision": "fails_public_rule",
         "failure_reasons": [
-          "Requested amount must not exceed the public maximum of 1000000; provided 1200000."
+          "Requested amount must not exceed the calculated public-rule maximum of 1000000; provided 1200000."
         ],
         "missing_inputs": [],
         "public_maximum": {
           "amount_inr": 1000000,
           "basis": "advertised product maximum",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "Published product ceiling = ₹1,000,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 2250000,
+              "calculation": "Salary-multiple cap = ₹150,000 NMI × 15 = ₹2,250,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -3525,7 +4440,25 @@
         "public_maximum": {
           "amount_inr": 3667000,
           "basis": "published minimum net-take-home rule",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": "New EMI room = ₹150,000 income − ₹20,000 existing EMIs − ₹37,500 required residual income = ₹92,500/month; converted to principal at 9.7% for 48 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published minimum net-take-home rule",
+              "amount_inr": 3667905,
+              "calculation": "New EMI room = ₹150,000 income − ₹20,000 existing EMIs − ₹37,500 required residual income = ₹92,500/month; converted to principal at 9.7% for 48 months"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 3750000,
+              "calculation": "Salary-multiple cap = ₹150,000 NMI × 25 = ₹3,750,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.7,
@@ -3563,7 +4496,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5500000
+          "advertised_product_max_inr": 5500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5500000,
+              "calculation": "Published product ceiling = ₹5,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -3600,7 +4541,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3500000
+          "advertised_product_max_inr": 3500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3500000,
+              "calculation": "Published product ceiling = ₹3,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -3635,7 +4584,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -3669,7 +4620,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3000000
+          "advertised_product_max_inr": 3000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3000000,
+              "calculation": "Published product ceiling = ₹3,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -3710,13 +4669,26 @@
         "product_name": "Personal Loan",
         "decision": "fails_public_rule",
         "failure_reasons": [
-          "Requested amount must not exceed the public maximum of 1000000; provided 1200000."
+          "Requested amount must not exceed the calculated public-rule maximum of 1000000; provided 1200000."
         ],
         "missing_inputs": [],
         "public_maximum": {
           "amount_inr": 1000000,
           "basis": "advertised product maximum",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "Published product ceiling = ₹1,000,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 2633559,
+              "calculation": "New EMI room = 60% of ₹150,000 income − ₹20,000 existing EMIs = ₹70,000/month; converted to principal at 12.5% for 48 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 12.5,
@@ -3750,7 +4722,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -3790,7 +4770,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -3833,7 +4821,15 @@
       "public_maximum": {
         "amount_inr": null,
         "basis": "not publicly determinable",
-        "advertised_product_max_inr": 10000000
+        "advertised_product_max_inr": 10000000,
+        "calculation": null,
+        "components": [
+          {
+            "basis": "advertised product maximum",
+            "amount_inr": 10000000,
+            "calculation": "Published product ceiling = ₹10,000,000"
+          }
+        ]
       },
       "advertised_rate_pct": {
         "minimum": 9.99,
@@ -3869,9 +4865,27 @@
         ],
         "missing_inputs": [],
         "public_maximum": {
-          "amount_inr": 1658000,
-          "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 5000000
+          "amount_inr": 1812000,
+          "basis": "published proposed EMI/NMI ratio",
+          "advertised_product_max_inr": 5000000,
+          "calculation": "Proposed new-loan EMI ceiling = 65% of ₹90,000 NMI = ₹58,500/month; converted to principal at 10% for 36 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule.",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published proposed EMI/NMI ratio",
+              "amount_inr": 1812987,
+              "calculation": "Proposed new-loan EMI ceiling = 65% of ₹90,000 NMI = ₹58,500/month; converted to principal at 10% for 36 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule."
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 2700000,
+              "calculation": "Salary-multiple cap = ₹90,000 NMI × 30 = ₹2,700,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -3883,7 +4897,8 @@
           "maximum": 84
         },
         "advisories": [
-          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass."
+          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass.",
+          "SBI publishes a proposed EMI/NMI ceiling of 65%, not a FOIR definition. The applicant-specific illustration therefore limits the proposed new-loan EMI to 65% of NMI and does not subtract existing EMIs under that ratio. Existing obligations may still affect SBI's internal underwriting."
         ],
         "evidence": [
           {
@@ -3908,7 +4923,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -3943,7 +4960,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -3978,7 +5003,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -4019,7 +5052,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -4057,7 +5098,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -4091,7 +5140,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -4103,13 +5160,13 @@
           "maximum": 48
         },
         "advisories": [
-          "Rules come from an amount-specific ₹50,000 page. The wider branch product advertises up to ₹50 lakh; this row intentionally scopes the online journey to ₹5 lakh.",
-          "Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
+          "This row models the Online Instant Personal Loan only: the official page limits that route to ₹30,000–₹5 lakh and 12–48 months. The same page separately advertises the broader personal-loan product at ₹30,000–₹50 lakh and 12–60 months; those wider terms are not mixed into this row.",
+          "Rules come from an amount-specific ₹50,000 page. Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
         ],
         "evidence": [
           {
             "label": "Official ₹50,000 journey",
-            "url": "https://www.indusind.com/in/en/personal/loans/personal-loan/50000-personal-loan.html",
+            "url": "https://www.indusind.bank.in/in/en/personal/loans/personal-loan/50000-personal-loan.html",
             "accessed_date": "2026-10-12"
           }
         ],
@@ -4127,7 +5184,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.85,
@@ -4163,7 +5228,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2500000
+          "advertised_product_max_inr": 2500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2500000,
+              "calculation": "Published product ceiling = ₹2,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -4199,7 +5272,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 18.0,
@@ -4234,7 +5315,20 @@
         "public_maximum": {
           "amount_inr": 958000,
           "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": "New EMI room = 40% of ₹90,000 income − ₹5,000 existing EMIs = ₹31,000/month; converted to principal at 10.15% for 36 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 958634,
+              "calculation": "New EMI room = 40% of ₹90,000 income − ₹5,000 existing EMIs = ₹31,000/month; converted to principal at 10.15% for 36 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.15,
@@ -4268,7 +5362,20 @@
         "public_maximum": {
           "amount_inr": 1000000,
           "basis": "advertised product maximum",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "Published product ceiling = ₹1,000,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 1350000,
+              "calculation": "Salary-multiple cap = ₹90,000 NMI × 15 = ₹1,350,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -4304,7 +5411,25 @@
         "public_maximum": {
           "amount_inr": 1945000,
           "basis": "published minimum net-take-home rule",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": "New EMI room = ₹90,000 income − ₹5,000 existing EMIs − ₹22,500 required residual income = ₹62,500/month; converted to principal at 9.7% for 36 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published minimum net-take-home rule",
+              "amount_inr": 1945433,
+              "calculation": "New EMI room = ₹90,000 income − ₹5,000 existing EMIs − ₹22,500 required residual income = ₹62,500/month; converted to principal at 9.7% for 36 months"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 2250000,
+              "calculation": "Salary-multiple cap = ₹90,000 NMI × 25 = ₹2,250,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.7,
@@ -4342,7 +5467,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5500000
+          "advertised_product_max_inr": 5500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5500000,
+              "calculation": "Published product ceiling = ₹5,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -4379,7 +5512,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3500000
+          "advertised_product_max_inr": 3500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3500000,
+              "calculation": "Published product ceiling = ₹3,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -4414,7 +5555,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -4448,7 +5591,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3000000
+          "advertised_product_max_inr": 3000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3000000,
+              "calculation": "Published product ceiling = ₹3,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -4495,7 +5646,20 @@
         "public_maximum": {
           "amount_inr": 1000000,
           "basis": "advertised product maximum",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "Published product ceiling = ₹1,000,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 1464714,
+              "calculation": "New EMI room = 60% of ₹90,000 income − ₹5,000 existing EMIs = ₹49,000/month; converted to principal at 12.5% for 36 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 12.5,
@@ -4531,7 +5695,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -4571,7 +5743,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -4614,7 +5794,25 @@
       "public_maximum": {
         "amount_inr": 3000000,
         "basis": "published salary multiple",
-        "advertised_product_max_inr": 5000000
+        "advertised_product_max_inr": 5000000,
+        "calculation": "Salary-multiple cap = ₹120,000 NMI × 25 = ₹3,000,000",
+        "components": [
+          {
+            "basis": "advertised product maximum",
+            "amount_inr": 5000000,
+            "calculation": "Published product ceiling = ₹5,000,000"
+          },
+          {
+            "basis": "published minimum net-take-home rule",
+            "amount_inr": 3791517,
+            "calculation": "New EMI room = ₹120,000 income − ₹10,000 existing EMIs − ₹30,000 required residual income = ₹80,000/month; converted to principal at 9.7% for 60 months"
+          },
+          {
+            "basis": "published salary multiple",
+            "amount_inr": 3000000,
+            "calculation": "Salary-multiple cap = ₹120,000 NMI × 25 = ₹3,000,000"
+          }
+        ]
       },
       "advertised_rate_pct": {
         "minimum": 9.7,
@@ -4651,9 +5849,27 @@
         "failure_reasons": [],
         "missing_inputs": [],
         "public_maximum": {
-          "amount_inr": 3200000,
-          "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 5000000
+          "amount_inr": 3600000,
+          "basis": "published salary multiple",
+          "advertised_product_max_inr": 5000000,
+          "calculation": "Salary-multiple cap = ₹120,000 NMI × 30 = ₹3,600,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published proposed EMI/NMI ratio",
+              "amount_inr": 3671098,
+              "calculation": "Proposed new-loan EMI ceiling = 65% of ₹120,000 NMI = ₹78,000/month; converted to principal at 10% for 60 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule."
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 3600000,
+              "calculation": "Salary-multiple cap = ₹120,000 NMI × 30 = ₹3,600,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -4665,7 +5881,8 @@
           "maximum": 84
         },
         "advisories": [
-          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass."
+          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass.",
+          "SBI publishes a proposed EMI/NMI ceiling of 65%, not a FOIR definition. The applicant-specific illustration therefore limits the proposed new-loan EMI to 65% of NMI and does not subtract existing EMIs under that ratio. Existing obligations may still affect SBI's internal underwriting."
         ],
         "evidence": [
           {
@@ -4686,7 +5903,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -4719,7 +5938,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -4754,7 +5981,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -4792,7 +6027,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -4832,7 +6075,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -4862,14 +6113,22 @@
         "product_name": "Online Instant Personal Loan",
         "decision": "fails_public_rule",
         "failure_reasons": [
-          "Requested amount must not exceed the public maximum of 500000; provided 800000.",
+          "Requested amount must not exceed the calculated public-rule maximum of 500000; provided 800000.",
           "Requested tenure must not exceed 48 months; provided 60."
         ],
         "missing_inputs": [],
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -4881,13 +6140,13 @@
           "maximum": 48
         },
         "advisories": [
-          "Rules come from an amount-specific ₹50,000 page. The wider branch product advertises up to ₹50 lakh; this row intentionally scopes the online journey to ₹5 lakh.",
-          "Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
+          "This row models the Online Instant Personal Loan only: the official page limits that route to ₹30,000–₹5 lakh and 12–48 months. The same page separately advertises the broader personal-loan product at ₹30,000–₹50 lakh and 12–60 months; those wider terms are not mixed into this row.",
+          "Rules come from an amount-specific ₹50,000 page. Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
         ],
         "evidence": [
           {
             "label": "Official ₹50,000 journey",
-            "url": "https://www.indusind.com/in/en/personal/loans/personal-loan/50000-personal-loan.html",
+            "url": "https://www.indusind.bank.in/in/en/personal/loans/personal-loan/50000-personal-loan.html",
             "accessed_date": "2026-10-12"
           }
         ],
@@ -4903,7 +6162,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.85,
@@ -4938,7 +6205,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2500000
+          "advertised_product_max_inr": 2500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2500000,
+              "calculation": "Published product ceiling = ₹2,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -4969,14 +6244,22 @@
         "failure_reasons": [
           "Age must not exceed 55; provided 58.",
           "Existing RBL savings/salary relationship must be True; provided False.",
-          "Requested amount must not exceed the public maximum of 500000; provided 800000.",
+          "Requested amount must not exceed the calculated public-rule maximum of 500000; provided 800000.",
           "Requested tenure must not exceed 36 months; provided 60."
         ],
         "missing_inputs": [],
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 18.0,
@@ -5011,7 +6294,20 @@
         "public_maximum": {
           "amount_inr": 1782000,
           "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": "New EMI room = 40% of ₹120,000 income − ₹10,000 existing EMIs = ₹38,000/month; converted to principal at 10.15% for 60 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 1782286,
+              "calculation": "New EMI room = 40% of ₹120,000 income − ₹10,000 existing EMIs = ₹38,000/month; converted to principal at 10.15% for 60 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.15,
@@ -5045,7 +6341,20 @@
         "public_maximum": {
           "amount_inr": 1000000,
           "basis": "advertised product maximum",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "Published product ceiling = ₹1,000,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 1800000,
+              "calculation": "Salary-multiple cap = ₹120,000 NMI × 15 = ₹1,800,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -5078,7 +6387,25 @@
         "public_maximum": {
           "amount_inr": 3000000,
           "basis": "published salary multiple",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": "Salary-multiple cap = ₹120,000 NMI × 25 = ₹3,000,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published minimum net-take-home rule",
+              "amount_inr": 3791517,
+              "calculation": "New EMI room = ₹120,000 income − ₹10,000 existing EMIs − ₹30,000 required residual income = ₹80,000/month; converted to principal at 9.7% for 60 months"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 3000000,
+              "calculation": "Salary-multiple cap = ₹120,000 NMI × 25 = ₹3,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.7,
@@ -5116,7 +6443,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5500000
+          "advertised_product_max_inr": 5500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5500000,
+              "calculation": "Published product ceiling = ₹5,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -5149,7 +6484,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3500000
+          "advertised_product_max_inr": 3500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3500000,
+              "calculation": "Published product ceiling = ₹3,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -5182,7 +6525,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -5216,7 +6561,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3000000
+          "advertised_product_max_inr": 3000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3000000,
+              "calculation": "Published product ceiling = ₹3,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -5263,7 +6616,20 @@
         "public_maximum": {
           "amount_inr": 1000000,
           "basis": "advertised product maximum",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "Published product ceiling = ₹1,000,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 2755808,
+              "calculation": "New EMI room = 60% of ₹120,000 income − ₹10,000 existing EMIs = ₹62,000/month; converted to principal at 12.5% for 60 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 12.5,
@@ -5299,7 +6665,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -5339,7 +6713,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -5382,7 +6764,25 @@
       "public_maximum": {
         "amount_inr": 173000,
         "basis": "published minimum net-take-home rule",
-        "advertised_product_max_inr": 5000000
+        "advertised_product_max_inr": 5000000,
+        "calculation": "New EMI room = ₹18,000 income − ₹0 existing EMIs − ₹10,000 required residual income = ₹8,000/month; converted to principal at 9.7% for 24 months",
+        "components": [
+          {
+            "basis": "advertised product maximum",
+            "amount_inr": 5000000,
+            "calculation": "Published product ceiling = ₹5,000,000"
+          },
+          {
+            "basis": "published minimum net-take-home rule",
+            "amount_inr": 173888,
+            "calculation": "New EMI room = ₹18,000 income − ₹0 existing EMIs − ₹10,000 required residual income = ₹8,000/month; converted to principal at 9.7% for 24 months"
+          },
+          {
+            "basis": "published salary multiple",
+            "amount_inr": 450000,
+            "calculation": "Salary-multiple cap = ₹18,000 NMI × 25 = ₹450,000"
+          }
+        ]
       },
       "advertised_rate_pct": {
         "minimum": 9.7,
@@ -5423,8 +6823,26 @@
         "missing_inputs": [],
         "public_maximum": {
           "amount_inr": 253000,
-          "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 5000000
+          "basis": "published proposed EMI/NMI ratio",
+          "advertised_product_max_inr": 5000000,
+          "calculation": "Proposed new-loan EMI ceiling = 65% of ₹18,000 NMI = ₹11,700/month; converted to principal at 10% for 24 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule.",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published proposed EMI/NMI ratio",
+              "amount_inr": 253549,
+              "calculation": "Proposed new-loan EMI ceiling = 65% of ₹18,000 NMI = ₹11,700/month; converted to principal at 10% for 24 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule."
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 540000,
+              "calculation": "Salary-multiple cap = ₹18,000 NMI × 30 = ₹540,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -5436,7 +6854,8 @@
           "maximum": 84
         },
         "advisories": [
-          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass."
+          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass.",
+          "SBI publishes a proposed EMI/NMI ceiling of 65%, not a FOIR definition. The applicant-specific illustration therefore limits the proposed new-loan EMI to 65% of NMI and does not subtract existing EMIs under that ratio. Existing obligations may still affect SBI's internal underwriting."
         ],
         "evidence": [
           {
@@ -5459,7 +6878,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -5494,7 +6915,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -5529,7 +6958,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -5569,7 +7006,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -5607,7 +7052,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -5643,7 +7096,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -5655,13 +7116,13 @@
           "maximum": 48
         },
         "advisories": [
-          "Rules come from an amount-specific ₹50,000 page. The wider branch product advertises up to ₹50 lakh; this row intentionally scopes the online journey to ₹5 lakh.",
-          "Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
+          "This row models the Online Instant Personal Loan only: the official page limits that route to ₹30,000–₹5 lakh and 12–48 months. The same page separately advertises the broader personal-loan product at ₹30,000–₹50 lakh and 12–60 months; those wider terms are not mixed into this row.",
+          "Rules come from an amount-specific ₹50,000 page. Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
         ],
         "evidence": [
           {
             "label": "Official ₹50,000 journey",
-            "url": "https://www.indusind.com/in/en/personal/loans/personal-loan/50000-personal-loan.html",
+            "url": "https://www.indusind.bank.in/in/en/personal/loans/personal-loan/50000-personal-loan.html",
             "accessed_date": "2026-10-12"
           }
         ],
@@ -5679,7 +7140,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.85,
@@ -5715,7 +7184,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2500000
+          "advertised_product_max_inr": 2500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2500000,
+              "calculation": "Published product ceiling = ₹2,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -5750,7 +7227,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 18.0,
@@ -5785,7 +7270,20 @@
         "public_maximum": {
           "amount_inr": 155000,
           "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": "New EMI room = 40% of ₹18,000 income − ₹0 existing EMIs = ₹7,200/month; converted to principal at 10.15% for 24 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 155796,
+              "calculation": "New EMI room = 40% of ₹18,000 income − ₹0 existing EMIs = ₹7,200/month; converted to principal at 10.15% for 24 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.15,
@@ -5819,7 +7317,20 @@
         "public_maximum": {
           "amount_inr": 270000,
           "basis": "published salary multiple",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "Salary-multiple cap = ₹18,000 NMI × 15 = ₹270,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 270000,
+              "calculation": "Salary-multiple cap = ₹18,000 NMI × 15 = ₹270,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -5852,7 +7363,25 @@
         "public_maximum": {
           "amount_inr": 173000,
           "basis": "published minimum net-take-home rule",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": "New EMI room = ₹18,000 income − ₹0 existing EMIs − ₹10,000 required residual income = ₹8,000/month; converted to principal at 9.7% for 24 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published minimum net-take-home rule",
+              "amount_inr": 173888,
+              "calculation": "New EMI room = ₹18,000 income − ₹0 existing EMIs − ₹10,000 required residual income = ₹8,000/month; converted to principal at 9.7% for 24 months"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 450000,
+              "calculation": "Salary-multiple cap = ₹18,000 NMI × 25 = ₹450,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.7,
@@ -5890,7 +7419,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5500000
+          "advertised_product_max_inr": 5500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5500000,
+              "calculation": "Published product ceiling = ₹5,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -5925,7 +7462,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3500000
+          "advertised_product_max_inr": 3500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3500000,
+              "calculation": "Published product ceiling = ₹3,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -5958,7 +7503,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -5994,7 +7541,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3000000
+          "advertised_product_max_inr": 3000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3000000,
+              "calculation": "Published product ceiling = ₹3,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -6041,7 +7596,20 @@
         "public_maximum": {
           "amount_inr": 228000,
           "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "New EMI room = 60% of ₹18,000 income − ₹0 existing EMIs = ₹10,800/month; converted to principal at 12.5% for 24 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 228294,
+              "calculation": "New EMI room = 60% of ₹18,000 income − ₹0 existing EMIs = ₹10,800/month; converted to principal at 12.5% for 24 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 12.5,
@@ -6077,7 +7645,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -6117,7 +7693,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -6160,7 +7744,25 @@
       "public_maximum": {
         "amount_inr": 2379000,
         "basis": "published minimum net-take-home rule",
-        "advertised_product_max_inr": 5000000
+        "advertised_product_max_inr": 5000000,
+        "calculation": "New EMI room = ₹100,000 income − ₹15,000 existing EMIs − ₹25,000 required residual income = ₹60,000/month; converted to principal at 9.7% for 48 months",
+        "components": [
+          {
+            "basis": "advertised product maximum",
+            "amount_inr": 5000000,
+            "calculation": "Published product ceiling = ₹5,000,000"
+          },
+          {
+            "basis": "published minimum net-take-home rule",
+            "amount_inr": 2379181,
+            "calculation": "New EMI room = ₹100,000 income − ₹15,000 existing EMIs − ₹25,000 required residual income = ₹60,000/month; converted to principal at 9.7% for 48 months"
+          },
+          {
+            "basis": "published salary multiple",
+            "amount_inr": 2500000,
+            "calculation": "Salary-multiple cap = ₹100,000 NMI × 25 = ₹2,500,000"
+          }
+        ]
       },
       "advertised_rate_pct": {
         "minimum": 9.7,
@@ -6199,9 +7801,27 @@
         ],
         "missing_inputs": [],
         "public_maximum": {
-          "amount_inr": 1971000,
-          "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 5000000
+          "amount_inr": 2562000,
+          "basis": "published proposed EMI/NMI ratio",
+          "advertised_product_max_inr": 5000000,
+          "calculation": "Proposed new-loan EMI ceiling = 65% of ₹100,000 NMI = ₹65,000/month; converted to principal at 10% for 48 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule.",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published proposed EMI/NMI ratio",
+              "amount_inr": 2562830,
+              "calculation": "Proposed new-loan EMI ceiling = 65% of ₹100,000 NMI = ₹65,000/month; converted to principal at 10% for 48 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule."
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 3000000,
+              "calculation": "Salary-multiple cap = ₹100,000 NMI × 30 = ₹3,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -6213,7 +7833,8 @@
           "maximum": 84
         },
         "advisories": [
-          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass."
+          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass.",
+          "SBI publishes a proposed EMI/NMI ceiling of 65%, not a FOIR definition. The applicant-specific illustration therefore limits the proposed new-loan EMI to 65% of NMI and does not subtract existing EMIs under that ratio. Existing obligations may still affect SBI's internal underwriting."
         ],
         "evidence": [
           {
@@ -6234,7 +7855,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -6267,7 +7890,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -6300,7 +7931,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -6338,7 +7977,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -6376,7 +8023,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -6406,13 +8061,21 @@
         "product_name": "Online Instant Personal Loan",
         "decision": "fails_public_rule",
         "failure_reasons": [
-          "Requested amount must not exceed the public maximum of 500000; provided 700000."
+          "Requested amount must not exceed the calculated public-rule maximum of 500000; provided 700000."
         ],
         "missing_inputs": [],
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -6424,13 +8087,13 @@
           "maximum": 48
         },
         "advisories": [
-          "Rules come from an amount-specific ₹50,000 page. The wider branch product advertises up to ₹50 lakh; this row intentionally scopes the online journey to ₹5 lakh.",
-          "Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
+          "This row models the Online Instant Personal Loan only: the official page limits that route to ₹30,000–₹5 lakh and 12–48 months. The same page separately advertises the broader personal-loan product at ₹30,000–₹50 lakh and 12–60 months; those wider terms are not mixed into this row.",
+          "Rules come from an amount-specific ₹50,000 page. Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
         ],
         "evidence": [
           {
             "label": "Official ₹50,000 journey",
-            "url": "https://www.indusind.com/in/en/personal/loans/personal-loan/50000-personal-loan.html",
+            "url": "https://www.indusind.bank.in/in/en/personal/loans/personal-loan/50000-personal-loan.html",
             "accessed_date": "2026-10-12"
           }
         ],
@@ -6446,7 +8109,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.85,
@@ -6481,7 +8152,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2500000
+          "advertised_product_max_inr": 2500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2500000,
+              "calculation": "Published product ceiling = ₹2,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -6511,14 +8190,22 @@
         "decision": "fails_public_rule",
         "failure_reasons": [
           "Existing RBL savings/salary relationship must be True; provided False.",
-          "Requested amount must not exceed the public maximum of 500000; provided 700000.",
+          "Requested amount must not exceed the calculated public-rule maximum of 500000; provided 700000.",
           "Requested tenure must not exceed 36 months; provided 48."
         ],
         "missing_inputs": [],
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 18.0,
@@ -6551,7 +8238,20 @@
         "public_maximum": {
           "amount_inr": 982000,
           "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": "New EMI room = 40% of ₹100,000 income − ₹15,000 existing EMIs = ₹25,000/month; converted to principal at 10.15% for 48 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 982909,
+              "calculation": "New EMI room = 40% of ₹100,000 income − ₹15,000 existing EMIs = ₹25,000/month; converted to principal at 10.15% for 48 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.15,
@@ -6585,7 +8285,20 @@
         "public_maximum": {
           "amount_inr": 1000000,
           "basis": "advertised product maximum",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "Published product ceiling = ₹1,000,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 1500000,
+              "calculation": "Salary-multiple cap = ₹100,000 NMI × 15 = ₹1,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -6618,7 +8331,25 @@
         "public_maximum": {
           "amount_inr": 2379000,
           "basis": "published minimum net-take-home rule",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": "New EMI room = ₹100,000 income − ₹15,000 existing EMIs − ₹25,000 required residual income = ₹60,000/month; converted to principal at 9.7% for 48 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published minimum net-take-home rule",
+              "amount_inr": 2379181,
+              "calculation": "New EMI room = ₹100,000 income − ₹15,000 existing EMIs − ₹25,000 required residual income = ₹60,000/month; converted to principal at 9.7% for 48 months"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 2500000,
+              "calculation": "Salary-multiple cap = ₹100,000 NMI × 25 = ₹2,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.7,
@@ -6656,7 +8387,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5500000
+          "advertised_product_max_inr": 5500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5500000,
+              "calculation": "Published product ceiling = ₹5,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -6689,7 +8428,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3500000
+          "advertised_product_max_inr": 3500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3500000,
+              "calculation": "Published product ceiling = ₹3,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -6722,7 +8469,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -6756,7 +8505,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3000000
+          "advertised_product_max_inr": 3000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3000000,
+              "calculation": "Published product ceiling = ₹3,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -6801,7 +8558,20 @@
         "public_maximum": {
           "amount_inr": 1000000,
           "basis": "advertised product maximum",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "Published product ceiling = ₹1,000,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 1693002,
+              "calculation": "New EMI room = 60% of ₹100,000 income − ₹15,000 existing EMIs = ₹45,000/month; converted to principal at 12.5% for 48 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 12.5,
@@ -6835,7 +8605,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -6875,7 +8653,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -6918,7 +8704,25 @@
       "public_maximum": {
         "amount_inr": 815000,
         "basis": "published minimum net-take-home rule",
-        "advertised_product_max_inr": 5000000
+        "advertised_product_max_inr": 5000000,
+        "calculation": "New EMI room = ₹50,000 income − ₹0 existing EMIs − ₹12,500 required residual income = ₹37,500/month; converted to principal at 9.7% for 24 months",
+        "components": [
+          {
+            "basis": "advertised product maximum",
+            "amount_inr": 5000000,
+            "calculation": "Published product ceiling = ₹5,000,000"
+          },
+          {
+            "basis": "published minimum net-take-home rule",
+            "amount_inr": 815100,
+            "calculation": "New EMI room = ₹50,000 income − ₹0 existing EMIs − ₹12,500 required residual income = ₹37,500/month; converted to principal at 9.7% for 24 months"
+          },
+          {
+            "basis": "published salary multiple",
+            "amount_inr": 1250000,
+            "calculation": "Salary-multiple cap = ₹50,000 NMI × 25 = ₹1,250,000"
+          }
+        ]
       },
       "advertised_rate_pct": {
         "minimum": 9.7,
@@ -6959,8 +8763,26 @@
         "missing_inputs": [],
         "public_maximum": {
           "amount_inr": 704000,
-          "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 5000000
+          "basis": "published proposed EMI/NMI ratio",
+          "advertised_product_max_inr": 5000000,
+          "calculation": "Proposed new-loan EMI ceiling = 65% of ₹50,000 NMI = ₹32,500/month; converted to principal at 10% for 24 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule.",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published proposed EMI/NMI ratio",
+              "amount_inr": 704302,
+              "calculation": "Proposed new-loan EMI ceiling = 65% of ₹50,000 NMI = ₹32,500/month; converted to principal at 10% for 24 months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule."
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 1500000,
+              "calculation": "Salary-multiple cap = ₹50,000 NMI × 30 = ₹1,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -6972,7 +8794,8 @@
           "maximum": 84
         },
         "advisories": [
-          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass."
+          "Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass.",
+          "SBI publishes a proposed EMI/NMI ceiling of 65%, not a FOIR definition. The applicant-specific illustration therefore limits the proposed new-loan EMI to 65% of NMI and does not subtract existing EMIs under that ratio. Existing obligations may still affect SBI's internal underwriting."
         ],
         "evidence": [
           {
@@ -6996,7 +8819,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -7031,7 +8856,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -7066,7 +8899,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -7106,7 +8947,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -7146,7 +8995,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 10000000
+          "advertised_product_max_inr": 10000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 10000000,
+              "calculation": "Published product ceiling = ₹10,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.99,
@@ -7183,7 +9040,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -7195,13 +9060,13 @@
           "maximum": 48
         },
         "advisories": [
-          "Rules come from an amount-specific ₹50,000 page. The wider branch product advertises up to ₹50 lakh; this row intentionally scopes the online journey to ₹5 lakh.",
-          "Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
+          "This row models the Online Instant Personal Loan only: the official page limits that route to ₹30,000–₹5 lakh and 12–48 months. The same page separately advertises the broader personal-loan product at ₹30,000–₹50 lakh and 12–60 months; those wider terms are not mixed into this row.",
+          "Rules come from an amount-specific ₹50,000 page. Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."
         ],
         "evidence": [
           {
             "label": "Official ₹50,000 journey",
-            "url": "https://www.indusind.com/in/en/personal/loans/personal-loan/50000-personal-loan.html",
+            "url": "https://www.indusind.bank.in/in/en/personal/loans/personal-loan/50000-personal-loan.html",
             "accessed_date": "2026-10-12"
           }
         ],
@@ -7219,7 +9084,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.85,
@@ -7254,7 +9127,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2500000
+          "advertised_product_max_inr": 2500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2500000,
+              "calculation": "Published product ceiling = ₹2,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.49,
@@ -7290,7 +9171,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 500000
+          "advertised_product_max_inr": 500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 500000,
+              "calculation": "Published product ceiling = ₹500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 18.0,
@@ -7326,7 +9215,20 @@
         "public_maximum": {
           "amount_inr": 432000,
           "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": "New EMI room = 40% of ₹50,000 income − ₹0 existing EMIs = ₹20,000/month; converted to principal at 10.15% for 24 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 432767,
+              "calculation": "New EMI room = 40% of ₹50,000 income − ₹0 existing EMIs = ₹20,000/month; converted to principal at 10.15% for 24 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.15,
@@ -7362,7 +9264,20 @@
         "public_maximum": {
           "amount_inr": 750000,
           "basis": "published salary multiple",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "Salary-multiple cap = ₹50,000 NMI × 15 = ₹750,000",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 750000,
+              "calculation": "Salary-multiple cap = ₹50,000 NMI × 15 = ₹750,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -7395,7 +9310,25 @@
         "public_maximum": {
           "amount_inr": 815000,
           "basis": "published minimum net-take-home rule",
-          "advertised_product_max_inr": 5000000
+          "advertised_product_max_inr": 5000000,
+          "calculation": "New EMI room = ₹50,000 income − ₹0 existing EMIs − ₹12,500 required residual income = ₹37,500/month; converted to principal at 9.7% for 24 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5000000,
+              "calculation": "Published product ceiling = ₹5,000,000"
+            },
+            {
+              "basis": "published minimum net-take-home rule",
+              "amount_inr": 815100,
+              "calculation": "New EMI room = ₹50,000 income − ₹0 existing EMIs − ₹12,500 required residual income = ₹37,500/month; converted to principal at 9.7% for 24 months"
+            },
+            {
+              "basis": "published salary multiple",
+              "amount_inr": 1250000,
+              "calculation": "Salary-multiple cap = ₹50,000 NMI × 25 = ₹1,250,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 9.7,
@@ -7435,7 +9368,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 5500000
+          "advertised_product_max_inr": 5500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 5500000,
+              "calculation": "Published product ceiling = ₹5,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.0,
@@ -7471,7 +9412,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3500000
+          "advertised_product_max_inr": 3500000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3500000,
+              "calculation": "Published product ceiling = ₹3,500,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 10.99,
@@ -7506,7 +9455,9 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": null
+          "advertised_product_max_inr": null,
+          "calculation": null,
+          "components": []
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -7542,7 +9493,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 3000000
+          "advertised_product_max_inr": 3000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 3000000,
+              "calculation": "Published product ceiling = ₹3,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -7589,7 +9548,20 @@
         "public_maximum": {
           "amount_inr": 634000,
           "basis": "published FOIR affordability",
-          "advertised_product_max_inr": 1000000
+          "advertised_product_max_inr": 1000000,
+          "calculation": "New EMI room = 60% of ₹50,000 income − ₹0 existing EMIs = ₹30,000/month; converted to principal at 12.5% for 24 months",
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 1000000,
+              "calculation": "Published product ceiling = ₹1,000,000"
+            },
+            {
+              "basis": "published FOIR affordability",
+              "amount_inr": 634151,
+              "calculation": "New EMI room = 60% of ₹50,000 income − ₹0 existing EMIs = ₹30,000/month; converted to principal at 12.5% for 24 months"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": 12.5,
@@ -7625,7 +9597,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,
@@ -7665,7 +9645,15 @@
         "public_maximum": {
           "amount_inr": null,
           "basis": "not publicly determinable",
-          "advertised_product_max_inr": 2000000
+          "advertised_product_max_inr": 2000000,
+          "calculation": null,
+          "components": [
+            {
+              "basis": "advertised product maximum",
+              "amount_inr": 2000000,
+              "calculation": "Published product ceiling = ₹2,000,000"
+            }
+          ]
         },
         "advertised_rate_pct": {
           "minimum": null,

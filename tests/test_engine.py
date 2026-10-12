@@ -54,10 +54,17 @@ class EngineTests(unittest.TestCase):
         result = evaluate_lender(self.base, self.catalog["L020"])
         self.assertEqual(result["decision"], "insufficient_public_data")
 
-    def test_sbi_foir_produces_public_cap(self) -> None:
+    def test_sbi_emi_nmi_produces_public_cap(self) -> None:
         result = evaluate_lender(self.base, self.catalog["L001"])
         self.assertEqual(result["decision"], "passes_public_rules")
         self.assertIsNotNone(result["public_maximum"]["amount_inr"])
+        self.assertEqual(result["public_maximum"]["basis"], "published proposed EMI/NMI ratio")
+
+    def test_sbi_emi_nmi_does_not_treat_existing_emis_as_foir(self) -> None:
+        profile = dict(self.base, existing_monthly_emis_inr=100_000)
+        result = evaluate_lender(profile, self.catalog["L001"])
+        self.assertGreater(result["public_maximum"]["amount_inr"], 0)
+        self.assertIn("not subtracted", result["public_maximum"]["calculation"])
 
     def test_requested_amount_above_public_cap_fails(self) -> None:
         profile = dict(self.base, requested_amount_inr=10_000_000)
@@ -70,6 +77,12 @@ class EngineTests(unittest.TestCase):
         result = evaluate_lender(profile, self.catalog["L003"])
         self.assertEqual(result["decision"], "fails_public_rule")
         self.assertTrue(any("tenure" in reason.lower() for reason in result["failure_reasons"]))
+
+    def test_indusind_instant_product_uses_48_month_scope(self) -> None:
+        profile = dict(self.base, requested_amount_inr=50_000, requested_tenure_months=60)
+        result = evaluate_lender(profile, self.catalog["L007"])
+        self.assertEqual(result["decision"], "fails_public_rule")
+        self.assertTrue(any("48 months" in reason for reason in result["failure_reasons"]))
 
     def test_lender_relationship_is_scoped_to_selected_lender(self) -> None:
         profile = dict(self.base, relationship_lender_ids=["L001"])

@@ -16,9 +16,9 @@
         {"field": "total_work_months", "operator": ">=", "value": 12, "strength": "hard", "label": "Service period"}
       ]
     },
-    "affordability": {"foir_cap_pct": 65, "salary_multiple": 30},
+    "affordability": {"emi_nmi_cap_pct": 65, "salary_multiple": 30},
     "product": {"max_amount_inr": 5000000, "min_rate_pct": 10.0, "max_rate_pct": null, "min_tenure_months": 6, "max_tenure_months": 84},
-    "advisories": ["Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass."],
+    "advisories": ["Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass.", "SBI publishes a proposed EMI/NMI ceiling of 65%, not a FOIR definition. The applicant-specific illustration therefore limits the proposed new-loan EMI to 65% of NMI and does not subtract existing EMIs under that ratio. Existing obligations may still affect SBI's internal underwriting."],
     "evidence": [{"label": "Official product page", "url": "https://sbi.bank.in/web/personal-banking/loans/personal-loans/sbi-personal-loan", "accessed_date": "2026-10-12"}]
   },
   {
@@ -136,8 +136,8 @@
     },
     "affordability": {},
     "product": {"max_amount_inr": 500000, "min_rate_pct": 10.49, "max_rate_pct": null, "min_tenure_months": 12, "max_tenure_months": 48},
-    "advisories": ["Rules come from an amount-specific ₹50,000 page. The wider branch product advertises up to ₹50 lakh; this row intentionally scopes the online journey to ₹5 lakh.", "Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."],
-    "evidence": [{"label": "Official ₹50,000 journey", "url": "https://www.indusind.com/in/en/personal/loans/personal-loan/50000-personal-loan.html", "accessed_date": "2026-10-12"}]
+    "advisories": ["This row models the Online Instant Personal Loan only: the official page limits that route to ₹30,000–₹5 lakh and 12–48 months. The same page separately advertises the broader personal-loan product at ₹30,000–₹50 lakh and 12–60 months; those wider terms are not mixed into this row.", "Rules come from an amount-specific ₹50,000 page. Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."],
+    "evidence": [{"label": "Official ₹50,000 journey", "url": "https://www.indusind.bank.in/in/en/personal/loans/personal-loan/50000-personal-loan.html", "accessed_date": "2026-10-12"}]
   },
   {
     "lender_id": "L008",

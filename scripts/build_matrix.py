@@ -31,14 +31,14 @@ def main() -> None:
     columns = [
         "lender_id", "lender_name", "product_name", "data_status", "employment_types",
         "age_rule", "maturity_age_rule", "income_rule", "cibil_rule", "work_rule",
-        "business_vintage_rule", "foir_cap_pct", "salary_multiple", "min_residual_income_pct",
+        "business_vintage_rule", "foir_cap_pct", "emi_nmi_cap_pct", "salary_multiple", "min_residual_income_pct",
         "min_residual_income_inr", "advertised_max_amount_inr",
         "advertised_min_rate_pct", "advertised_max_rate_pct", "minimum_tenure_months",
         "maximum_tenure_months", "primary_source_url", "accessed_date", "notes"
     ]
     path = ROOT / "data" / "lender_rule_matrix.csv"
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=columns)
+        writer = csv.DictWriter(handle, fieldnames=columns, lineterminator="\n")
         writer.writeheader()
         for lender in lenders:
             product = lender.get("product", {})
@@ -57,6 +57,7 @@ def main() -> None:
                 "work_rule": "; ".join(filter(None, [find_rule(lender, "total_work_months"), find_rule(lender, "current_job_months")])),
                 "business_vintage_rule": find_rule(lender, "business_vintage_months"),
                 "foir_cap_pct": affordability.get("foir_cap_pct"),
+                "emi_nmi_cap_pct": affordability.get("emi_nmi_cap_pct"),
                 "salary_multiple": affordability.get("salary_multiple"),
                 "min_residual_income_pct": affordability.get("min_residual_income_pct"),
                 "min_residual_income_inr": affordability.get("min_residual_income_inr"),
@@ -78,7 +79,7 @@ def main() -> None:
     ]
     rule_number = 1
     with evidence_path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=evidence_columns)
+        writer = csv.DictWriter(handle, fieldnames=evidence_columns, lineterminator="\n")
         writer.writeheader()
         for lender in lenders:
             evidence = lender.get("evidence", [])

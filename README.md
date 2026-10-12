@@ -37,7 +37,7 @@ It does **not** claim bank approval. Final underwriting still depends on private
 2. Select rules for that employment type.
 3. Check age, income, work history, credit score and lender relationship where published.
 4. Check the requested amount and tenure against public product limits.
-5. Calculate an applicant maximum only when FOIR, salary multiple or net-take-home rules are public.
+5. Calculate an applicant maximum only when FOIR, EMI/NMI, salary-multiple or net-take-home rules are public.
 6. Return the comparison, reason and evidence link for every lender.
 
 There is no trained ML model because no labelled approval dataset was available.
@@ -58,19 +58,21 @@ Assume:
 
 - Net monthly income: ₹80,000
 - Existing EMIs: ₹10,000
-- Published FOIR cap: 65%
+- Published FOIR cap: 40%
 - Requested tenure: 36 months
 - Published starting rate: 10% p.a.
 
 Calculation:
 
 ```text
-Maximum total EMI = ₹80,000 × 65% = ₹52,000
-Room for new EMI  = ₹52,000 − ₹10,000 = ₹42,000
-Indicative maximum principal at 10% for 36 months ≈ ₹13.01 lakh
+Maximum total obligations = ₹80,000 × 40% = ₹32,000
+Room for new EMI          = ₹32,000 − ₹10,000 = ₹22,000
+Indicative maximum principal at 10% for 36 months ≈ ₹6.82 lakh
 ```
 
 The result is an estimate from public rules—not a sanction amount.
+
+FOIR and EMI/NMI are not treated as interchangeable. For example, SBI publishes a proposed EMI/NMI ceiling of 65%; the prototype applies that ratio to the proposed new-loan EMI and does not subtract existing EMIs unless a cited lender rule explicitly defines a total-obligation calculation.
 
 ## Interest-cost example
 

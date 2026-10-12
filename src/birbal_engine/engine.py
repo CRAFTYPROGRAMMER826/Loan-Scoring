@@ -60,10 +60,14 @@ def _check_rule(profile: dict[str, Any], rule: dict[str, Any]) -> tuple[bool, st
 
 def _estimate_public_cap(profile: dict[str, Any], lender: dict[str, Any]) -> dict[str, Any]:
     product = lender.get("product", {})
-    caps: list[tuple[str, float]] = []
+    caps: list[tuple[str, float, str]] = []
     published_max = product.get("max_amount_inr")
     if published_max:
-        caps.append(("advertised product maximum", float(published_max)))
+        caps.append((
+            "advertised product maximum",
+            float(published_max),
+            f"Published product ceiling = ₹{float(published_max):,.0f}",
+        ))
 
     affordability = lender.get("affordability", {})
     income = float(profile.get("monthly_income_inr") or 0)
@@ -74,31 +78,64 @@ def _estimate_public_cap(profile: dict[str, Any], lender: dict[str, Any]) -> dic
     months = min(requested_months, product_max_months) if requested_months and product_max_months else product_max_months
 
     if affordability.get("foir_cap_pct") is not None and rate is not None and months:
-        emi = _monthly_payment_capacity(income, existing_emis, affordability["foir_cap_pct"])
-        caps.append(("published FOIR affordability", _present_value_from_emi(emi, rate, months)))
+        foir_pct = float(affordability["foir_cap_pct"])
+        emi = _monthly_payment_capacity(income, existing_emis, foir_pct)
+        caps.append((
+            "published FOIR affordability",
+            _present_value_from_emi(emi, rate, months),
+            f"New EMI room = {foir_pct:g}% of ₹{income:,.0f} income − ₹{existing_emis:,.0f} existing EMIs = ₹{emi:,.0f}/month; converted to principal at {float(rate):g}% for {int(months)} months",
+        ))
+
+    if affordability.get("emi_nmi_cap_pct") is not None and rate is not None and months:
+        emi_nmi_pct = float(affordability["emi_nmi_cap_pct"])
+        emi = max(0.0, income * emi_nmi_pct / 100.0)
+        caps.append((
+            "published proposed EMI/NMI ratio",
+            _present_value_from_emi(emi, rate, months),
+            f"Proposed new-loan EMI ceiling = {emi_nmi_pct:g}% of ₹{income:,.0f} NMI = ₹{emi:,.0f}/month; converted to principal at {float(rate):g}% for {int(months)} months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule.",
+        ))
 
     residual_pct = affordability.get("min_residual_income_pct")
     residual_floor = affordability.get("min_residual_income_inr")
     if residual_pct is not None and residual_floor is not None and rate is not None and months:
         required_residual = max(income * float(residual_pct) / 100.0, float(residual_floor))
         emi = max(0.0, income - existing_emis - required_residual)
-        caps.append(("published minimum net-take-home rule", _present_value_from_emi(emi, rate, months)))
+        caps.append((
+            "published minimum net-take-home rule",
+            _present_value_from_emi(emi, rate, months),
+            f"New EMI room = ₹{income:,.0f} income − ₹{existing_emis:,.0f} existing EMIs − ₹{required_residual:,.0f} required residual income = ₹{emi:,.0f}/month; converted to principal at {float(rate):g}% for {int(months)} months",
+        ))
 
     if affordability.get("salary_multiple") is not None and income:
-        caps.append(("published salary multiple", income * affordability["salary_multiple"]))
+        multiple = float(affordability["salary_multiple"])
+        caps.append((
+            "published salary multiple",
+            income * multiple,
+            f"Salary-multiple cap = ₹{income:,.0f} NMI × {multiple:g} = ₹{income * multiple:,.0f}",
+        ))
 
     if len(caps) <= 1:
         return {
             "amount_inr": None,
             "basis": "not publicly determinable",
             "advertised_product_max_inr": published_max,
+            "calculation": None,
+            "components": [
+                {"basis": basis, "amount_inr": int(value), "calculation": calculation}
+                for basis, value, calculation in caps
+            ],
         }
 
-    basis, amount = min(caps, key=lambda item: item[1])
+    basis, amount, calculation = min(caps, key=lambda item: item[1])
     return {
         "amount_inr": int(math.floor(amount / 1000.0) * 1000),
         "basis": basis,
         "advertised_product_max_inr": published_max,
+        "calculation": calculation,
+        "components": [
+            {"basis": cap_basis, "amount_inr": int(cap_amount), "calculation": cap_calculation}
+            for cap_basis, cap_amount, cap_calculation in caps
+        ],
     }
 
 
@@ -138,7 +175,7 @@ def evaluate_lender(profile: dict[str, Any], lender: dict[str, Any]) -> dict[str
 
     if requested_amount is not None and applicable_cap is not None and float(requested_amount) > float(applicable_cap):
         hard_failures.append(
-            f"Requested amount must not exceed the public maximum of {int(applicable_cap)}; provided {int(requested_amount)}."
+            f"Requested amount must not exceed the calculated public-rule maximum of {int(applicable_cap)}; provided {int(requested_amount)}."
         )
     minimum_tenure = product.get("min_tenure_months")
     maximum_tenure = product.get("max_tenure_months")

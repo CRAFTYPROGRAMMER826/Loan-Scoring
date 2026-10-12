@@ -26,6 +26,7 @@ def main() -> None:
         writer = csv.DictWriter(
             handle,
             fieldnames=["profile_id", "passes_public_rules", "fails_public_rule", "insufficient_public_data", "best_option"],
+            lineterminator="\n",
         )
         writer.writeheader()
         for result in results:

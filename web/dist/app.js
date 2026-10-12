@@ -89,14 +89,32 @@ function publicMaximum(profile, lender) {
   const product = lender.product || {};
   const affordability = lender.affordability || {};
   const caps = [];
-  if (product.max_amount_inr) caps.push({ basis: "advertised product maximum", value: Number(product.max_amount_inr) });
+  if (product.max_amount_inr) caps.push({
+    basis: "advertised product maximum",
+    value: Number(product.max_amount_inr),
+    calculation: `Published product ceiling = ${inr.format(Number(product.max_amount_inr))}`,
+  });
 
   const income = Number(profile.monthly_income_inr || 0);
   const existingEmis = Number(profile.existing_monthly_emis_inr || 0);
   const months = Math.min(Number(profile.requested_tenure_months || 0), Number(product.max_tenure_months || 0));
   if (affordability.foir_cap_pct != null && product.min_rate_pct != null && months) {
-    const emi = Math.max(0, income * affordability.foir_cap_pct / 100 - existingEmis);
-    caps.push({ basis: "published FOIR affordability", value: presentValue(emi, product.min_rate_pct, months) });
+    const percentage = Number(affordability.foir_cap_pct);
+    const emi = Math.max(0, income * percentage / 100 - existingEmis);
+    caps.push({
+      basis: "published FOIR affordability",
+      value: presentValue(emi, product.min_rate_pct, months),
+      calculation: `New EMI room = ${percentage}% of ${inr.format(income)} income − ${inr.format(existingEmis)} existing EMIs = ${inr.format(Math.round(emi))}/month; converted to principal at ${product.min_rate_pct}% for ${months} months.`,
+    });
+  }
+  if (affordability.emi_nmi_cap_pct != null && product.min_rate_pct != null && months) {
+    const percentage = Number(affordability.emi_nmi_cap_pct);
+    const emi = Math.max(0, income * percentage / 100);
+    caps.push({
+      basis: "published proposed EMI/NMI ratio",
+      value: presentValue(emi, product.min_rate_pct, months),
+      calculation: `Proposed new-loan EMI ceiling = ${percentage}% of ${inr.format(income)} NMI = ${inr.format(Math.round(emi))}/month; converted to principal at ${product.min_rate_pct}% for ${months} months. Existing EMIs are not subtracted because the cited rule is EMI/NMI, not a published FOIR rule.`,
+    });
   }
   if (affordability.min_residual_income_pct != null && affordability.min_residual_income_inr != null && product.min_rate_pct != null && months) {
     const requiredResidual = Math.max(
@@ -104,14 +122,35 @@ function publicMaximum(profile, lender) {
       Number(affordability.min_residual_income_inr),
     );
     const emi = Math.max(0, income - existingEmis - requiredResidual);
-    caps.push({ basis: "published minimum net-take-home rule", value: presentValue(emi, product.min_rate_pct, months) });
+    caps.push({
+      basis: "published minimum net-take-home rule",
+      value: presentValue(emi, product.min_rate_pct, months),
+      calculation: `New EMI room = ${inr.format(income)} income − ${inr.format(existingEmis)} existing EMIs − ${inr.format(Math.round(requiredResidual))} required residual income = ${inr.format(Math.round(emi))}/month; converted to principal at ${product.min_rate_pct}% for ${months} months.`,
+    });
   }
   if (affordability.salary_multiple != null && income) {
-    caps.push({ basis: "published salary multiple", value: income * affordability.salary_multiple });
+    const multiple = Number(affordability.salary_multiple);
+    caps.push({
+      basis: "published salary multiple",
+      value: income * multiple,
+      calculation: `Salary-multiple cap = ${inr.format(income)} NMI × ${multiple} = ${inr.format(income * multiple)}.`,
+    });
   }
-  if (caps.length <= 1) return { amount: null, basis: "not publicly determinable", advertised: product.max_amount_inr || null };
+  if (caps.length <= 1) return {
+    amount: null,
+    basis: "not publicly determinable",
+    advertised: product.max_amount_inr || null,
+    calculation: null,
+    components: caps,
+  };
   const winner = caps.sort((a, b) => a.value - b.value)[0];
-  return { amount: Math.floor(winner.value / 1000) * 1000, basis: winner.basis, advertised: product.max_amount_inr || null };
+  return {
+    amount: Math.floor(winner.value / 1000) * 1000,
+    basis: winner.basis,
+    advertised: product.max_amount_inr || null,
+    calculation: winner.calculation,
+    components: caps,
+  };
 }
 
 function evaluate(profile, lender) {
@@ -143,13 +182,18 @@ function evaluate(profile, lender) {
   const maximum = publicMaximum(profile, lender);
   const applicableCap = maximum.amount ?? maximum.advertised;
   if (applicableCap != null) {
-    ruleChecks.push(checkRule(computed, {
+    const amountCheck = checkRule(computed, {
       field: "requested_amount_inr",
       operator: "<=",
       value: applicableCap,
-      label: maximum.amount != null ? "Requested amount vs applicant public maximum" : "Requested amount vs advertised product maximum",
+      label: maximum.amount != null ? "Requested amount vs calculated public-rule maximum" : "Requested amount vs advertised product maximum",
       strength: "hard",
-    }));
+    });
+    amountCheck.calculation = maximum.calculation
+      ? `Prototype derivation—not a number quoted by the lender. ${maximum.calculation}`
+      : null;
+    amountCheck.sourceLabel = maximum.amount != null ? "Rule source ↗" : "Product source ↗";
+    ruleChecks.push(amountCheck);
   }
   if (lender.product?.min_tenure_months != null) {
     ruleChecks.push(checkRule(computed, {
@@ -303,8 +347,8 @@ function ruleProof(check, source) {
   const symbol = check.missing ? "?" : check.ok ? "✓" : "×";
   return `<div class="rule-proof ${stateClass}">
     <span>${symbol}</span>
-    <div><strong>${check.requirement}</strong><small>Applicant value: ${check.actual}</small></div>
-    ${source ? `<a href="${source.url}" target="_blank" rel="noreferrer" title="${source.url}">Evidence ↗</a>` : ""}
+    <div><strong>${check.requirement}</strong><small>Applicant value: ${check.actual}</small>${check.calculation ? `<small>Calculation: ${check.calculation}</small>` : ""}</div>
+    ${source ? `<a href="${source.url}" target="_blank" rel="noreferrer" title="${source.url}">${check.sourceLabel || "Rule source ↗"}</a>` : ""}
   </div>`;
 }
 
@@ -321,6 +365,9 @@ function lenderDetails(item, open = false) {
         ? `No rejection was inferred. ${item.missing.length} applicant value${item.missing.length === 1 ? " is" : "s are"} missing, so the published rule cannot be tested.`
         : "The public information is not stable or complete enough to make a defensible eligibility claim.";
   const advisories = (item.advisories || []).map((note) => `<li>${note}</li>`).join("");
+  const capBreakdown = (item.maximum?.components || []).length > 1
+    ? item.maximum.components.map((component) => `<li><strong>${component.basis}:</strong> ${inr.format(Math.floor(component.value / 1000) * 1000)}</li>`).join("")
+    : "";
   const sources = (item.evidence || []).map((source) => `
     <div class="source-item">
       <a href="${source.url}" target="_blank" rel="noreferrer">${source.label || "Official lender source"} — ${sourceHost(source.url)} ↗</a>
@@ -338,7 +385,8 @@ function lenderDetails(item, open = false) {
         <div class="result-proof-head"><div><strong>Why this result</strong><p>${explanation}</p></div><span class="decision-chip ${meta.className}">${meta.label}</span></div>
         ${failedChecks.length ? `<div class="proof-section-title">Requirements not met</div><div class="rule-proof-list">${failedChecks.map((check) => ruleProof(check, primarySource)).join("")}</div>` : ""}
         ${passedChecks.length ? `<div class="proof-section-title">Requirements met</div><div class="rule-proof-list">${passedChecks.map((check) => ruleProof(check, primarySource)).join("")}</div>` : ""}
-        ${item.maximum ? `<p><strong>Public maximum:</strong> ${maximumLabel(item)} · ${item.maximum.basis}</p>` : ""}
+        ${item.maximum ? `<p><strong>Calculated public-rule maximum:</strong> ${maximumLabel(item)} · ${item.maximum.basis}${item.maximum.calculation ? `<br><small>${item.maximum.calculation}</small>` : ""}</p>` : ""}
+        ${capBreakdown ? `<div><strong>Caps compared — the lowest applies</strong><ul>${capBreakdown}</ul></div>` : ""}
         ${advisories ? `<strong>Advisories</strong><ul>${advisories}</ul>` : ""}
         <div class="source-panel"><strong>Official evidence used for this lender</strong>${sources || "<p>No stable public source captured.</p>"}</div>
       </div>
@@ -406,7 +454,7 @@ function renderResults(profile) {
       <div class="best-title"><h4>${best.lender_name}</h4><span>${best.data_status} evidence</span></div>
       <div class="best-metrics">
         <div><small>Advertised rate</small><strong>${rateLabel(best)}</strong></div>
-        <div><small>Public maximum</small><strong>${maximumLabel(best)}</strong></div>
+        <div><small>Public-rule maximum</small><strong>${maximumLabel(best)}</strong></div>
         <div><small>Tenure range</small><strong>${tenureLabel(best.product)}</strong></div>
       </div>
       <div class="best-proof">
@@ -441,7 +489,7 @@ function renderResults(profile) {
       <div class="comparison-heading"><div><small>Complete comparison</small><h4>${results.length} lender${results.length === 1 ? "" : "s"} checked</h4></div><div class="comparison-legend"><span class="green-dot">Best fit</span><span class="red-dot">Ineligible</span><span class="gray-dot">Unknown</span></div></div>
       <div class="table-scroll">
         <table class="comparison-table">
-          <thead><tr><th></th><th>Lender and product</th><th>Screening result</th><th>Rules</th><th>Advertised rate</th><th>Public maximum</th><th>Illustrative interest</th><th>Evidence</th></tr></thead>
+          <thead><tr><th></th><th>Lender and product</th><th>Screening result</th><th>Rules</th><th>Advertised rate</th><th>Public-rule maximum</th><th>Illustrative interest</th><th>Evidence</th></tr></thead>
           <tbody>${ordered.map((item) => comparisonRow(item, best)).join("")}</tbody>
         </table>
       </div>
