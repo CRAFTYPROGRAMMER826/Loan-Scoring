@@ -199,6 +199,7 @@ scripts/generate_outputs.py         Rebuild test outputs
 scripts/evaluate_profile.py         Command-line evaluator
 tests/test_engine.py                Behavioural test suite
 web/dist/                           Static user-facing application
+web/vercel.json                     Static Vercel deployment configuration
 DATA_AUDIT.md                       Conflicts and limitations
 ```
 

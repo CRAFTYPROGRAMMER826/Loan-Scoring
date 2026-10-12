@@ -7,3 +7,4 @@ __pycache__/
 .streamlit/secrets.toml
 web/birbal-site.tar.gz
 .sites-web-git/
+.openai
