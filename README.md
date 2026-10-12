@@ -10,13 +10,6 @@ It answers:
 
 It does **not** claim bank approval. Final underwriting still depends on private lender policies, complete bureau data, fraud checks and document verification.
 
-## Live interface
-
-- Private working preview: [Birbal Lens](https://birbal-public-rule-lens.duskyeel512.chatgpt.site) (owner access)
-- Static frontend: `web/dist/`
-- Python/Streamlit interface: `app.py`
-
-Before submission, replace the private preview with the public Vercel URL if you deploy one.
 
 ## What the model returns
 
