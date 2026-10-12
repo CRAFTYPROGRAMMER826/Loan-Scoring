@@ -1,0 +1,9 @@
+.DS_Store
+.venv/
+.vercel/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.streamlit/secrets.toml
+web/birbal-site.tar.gz
+.sites-web-git/

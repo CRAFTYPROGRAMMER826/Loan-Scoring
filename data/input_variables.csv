@@ -1,0 +1,14 @@
+variable_name,unit,type,description,source,example,allowed_values_or_range
+profile_id,,string,Stable identifier for the test or applicant profile,Application,P-001,Any non-empty string
+employment_type,,categorical,Primary income/employment segment used to select segment-specific rules,Applicant,salaried,salaried|self_employed
+age_years,years,integer,Completed age on the evaluation date,Applicant/PAN/DOB document,30,18-100
+monthly_income_inr,INR/month,number,Regular net monthly income used for public affordability checks,Salary slips or bank statement,80000,>=0
+existing_monthly_emis_inr,INR/month,number,Total current EMI obligations before the proposed loan,Bureau plus applicant/bank statement,10000,>=0
+cibil_score,score,integer or null,Optional credit bureau score; when absent a published CIBIL rule is marked untestable rather than failed,Credit bureau or applicant-provided report,760,blank|300-900
+total_work_months,months,integer,Total salaried work experience across employers,Applicant/employment documents,60,>=0
+current_job_months,months,integer,Continuous tenure with the current employer,Applicant/employment documents,24,>=0
+business_vintage_months,months,integer,Continuous operating history of the present business or profession,ITR/GST/business registration,36,>=0
+relationship_lender_ids,,list of strings,Lender IDs where the applicant already has the account relationship required by the captured product,Applicant and bank statement,"[L001]",Any subset of L001|L010
+resident_indian,,boolean,Whether the applicant is an Indian resident where the product requires it,KYC/address documents,true,true|false
+requested_amount_inr,INR,number,Loan amount requested by the applicant,Applicant,500000,>0
+requested_tenure_months,months,integer,Requested repayment period used for maturity-age and affordability calculations,Applicant,36,6-120

@@ -1,0 +1,15 @@
+{
+  "profile_id": "demo-salaried-01",
+  "employment_type": "salaried",
+  "age_years": 30,
+  "monthly_income_inr": 80000,
+  "existing_monthly_emis_inr": 10000,
+  "cibil_score": 780,
+  "total_work_months": 60,
+  "current_job_months": 24,
+  "business_vintage_months": 0,
+  "relationship_lender_ids": ["L001", "L010"],
+  "resident_indian": true,
+  "requested_amount_inr": 500000,
+  "requested_tenure_months": 36
+}

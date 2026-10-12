@@ -1,0 +1,11 @@
+profile_id,passes_public_rules,fails_public_rule,insufficient_public_data,best_option
+P001_strong_salaried,17,2,1,Canara Bank
+P002_low_credit_score,12,7,1,Canara Bank
+P003_high_existing_emi,13,6,1,Axis Bank
+P004_new_job,11,8,1,Canara Bank
+P005_established_self_employed,6,13,1,ICICI Bank
+P006_new_self_employed,5,14,1,IDFC FIRST Bank
+P007_near_maturity_age,11,8,1,Canara Bank
+P008_low_income,5,14,1,Canara Bank
+P009_no_salary_relationship,15,4,1,Canara Bank
+P010_age_below_most_limits,1,18,1,Canara Bank
