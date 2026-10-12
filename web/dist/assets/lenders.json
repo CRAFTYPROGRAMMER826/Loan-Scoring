@@ -1,0 +1,395 @@
+[
+  {
+    "lender_id": "L001",
+    "lender_name": "State Bank of India",
+    "product_name": "SBI Personal Loan",
+    "supported_employment_types": ["salaried"],
+    "data_status": "verified",
+    "rules": [
+      {"field": "age_years", "operator": ">=", "value": 21, "strength": "hard", "label": "Age"},
+      {"field": "age_years", "operator": "<=", "value": 60, "strength": "hard", "label": "Age"},
+      {"field": "salary_account_with_lender", "operator": "=", "value": true, "strength": "hard", "label": "SBI salary account"}
+    ],
+    "segment_rules": {
+      "salaried": [
+        {"field": "monthly_income_inr", "operator": ">=", "value": 25000, "strength": "hard", "label": "Net monthly income"},
+        {"field": "total_work_months", "operator": ">=", "value": 12, "strength": "hard", "label": "Service period"}
+      ]
+    },
+    "affordability": {"foir_cap_pct": 65, "salary_multiple": 30},
+    "product": {"max_amount_inr": 5000000, "min_rate_pct": 10.0, "max_rate_pct": null, "min_tenure_months": 6, "max_tenure_months": 84},
+    "advisories": ["Income and service thresholds vary by employer category: government/defence applicants may qualify from ₹20,000 and 6 months, while corporate applicants need ₹25,000 and 12 months. Because employer category is not collected, the prototype applies the stricter ₹25,000 and 12-month thresholds to avoid a false pass."],
+    "evidence": [{"label": "Official product page", "url": "https://sbi.bank.in/web/personal-banking/loans/personal-loans/sbi-personal-loan", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L002",
+    "lender_name": "HDFC Bank",
+    "product_name": "Personal Loan — salaried",
+    "supported_employment_types": ["salaried"],
+    "data_status": "partial",
+    "rules": [
+      {"field": "age_years", "operator": ">=", "value": 21, "strength": "hard", "label": "Age"},
+      {"field": "age_years", "operator": "<=", "value": 60, "strength": "hard", "label": "Age"},
+      {"field": "monthly_income_inr", "operator": ">=", "value": 25000, "strength": "hard", "label": "Net monthly income"},
+      {"field": "total_work_months", "operator": ">=", "value": 24, "strength": "hard", "label": "Total work experience"},
+      {"field": "current_job_months", "operator": ">=", "value": 12, "strength": "hard", "label": "Current employer tenure"}
+    ],
+    "segment_rules": {},
+    "affordability": {},
+    "product": {"max_amount_inr": null, "min_rate_pct": null, "max_rate_pct": null, "min_tenure_months": null, "max_tenure_months": null},
+    "advisories": ["Eligibility was corroborated on a current official Ahmedabad page; complete current national pricing was not captured in this pass."],
+    "evidence": [{"label": "Official Ahmedabad eligibility page", "url": "https://www.hdfcbank.com/personal/borrow/popular-loans/personal-loan/personal-loan-in-india/personal-loan-in-ahmedabad", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L003",
+    "lender_name": "ICICI Bank",
+    "product_name": "Personal Loan",
+    "supported_employment_types": ["salaried", "self_employed"],
+    "data_status": "verified",
+    "rules": [],
+    "segment_rules": {
+      "salaried": [
+        {"field": "age_years", "operator": ">=", "value": 20, "strength": "hard", "label": "Age"},
+        {"field": "age_years", "operator": "<=", "value": 58, "strength": "hard", "label": "Age"},
+        {"field": "monthly_income_inr", "operator": ">=", "value": 30000, "strength": "hard", "label": "Net monthly income"},
+        {"field": "total_work_months", "operator": ">=", "value": 24, "strength": "hard", "label": "Total work experience"}
+      ],
+      "self_employed": [
+        {"field": "age_years", "operator": ">=", "value": 23, "strength": "hard", "label": "Age"},
+        {"field": "age_years", "operator": "<=", "value": 65, "strength": "hard", "label": "Age"},
+        {"field": "business_vintage_months", "operator": ">=", "value": 24, "strength": "hard", "label": "Current business vintage"}
+      ]
+    },
+    "affordability": {},
+    "product": {"max_amount_inr": 5000000, "min_rate_pct": 9.99, "max_rate_pct": null, "min_tenure_months": 12, "max_tenure_months": 84},
+    "advisories": ["The official eligibility calculator is representative only; no calculator-derived cutoff is encoded."],
+    "evidence": [{"label": "Official product and eligibility page", "url": "https://www.icici.bank.in/personal-banking/loans/personal-loan", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L004",
+    "lender_name": "Axis Bank",
+    "product_name": "Personal Loan",
+    "supported_employment_types": ["salaried"],
+    "data_status": "verified",
+    "rules": [
+      {"field": "age_years", "operator": ">=", "value": 21, "strength": "hard", "label": "Age"},
+      {"field": "age_at_maturity_years", "operator": "<=", "value": 60, "strength": "hard", "label": "Age at maturity"},
+      {"field": "monthly_income_inr", "operator": ">=", "value": 25000, "strength": "hard", "label": "Net monthly income"}
+    ],
+    "segment_rules": {},
+    "affordability": {},
+    "product": {"max_amount_inr": 5000000, "min_rate_pct": 9.99, "max_rate_pct": 22.0, "min_tenure_months": 12, "max_tenure_months": 84},
+    "advisories": ["Published minimum income varies by Axis relationship and location: ₹15,000 is an existing-customer threshold. Because that relationship is not collected, the prototype applies the stricter ₹25,000 public threshold to avoid a false pass."],
+    "evidence": [{"label": "Official product page", "url": "https://www.axis.bank.in/loans/personal-loan", "accessed_date": "2026-10-12"}, {"label": "Official rates and charges", "url": "https://www.axis.bank.in/loans/personal-loan/interest-rates-charges", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L005",
+    "lender_name": "Kotak Mahindra Bank",
+    "product_name": "Personal Loan",
+    "supported_employment_types": ["salaried"],
+    "data_status": "partial",
+    "rules": [
+      {"field": "age_years", "operator": ">=", "value": 21, "strength": "hard", "label": "Age"},
+      {"field": "age_years", "operator": "<=", "value": 60, "strength": "hard", "label": "Age"},
+      {"field": "monthly_income_inr", "operator": ">=", "value": 20000, "strength": "hard", "label": "Net monthly income"},
+      {"field": "total_work_months", "operator": ">=", "value": 12, "strength": "hard", "label": "Work experience"}
+    ],
+    "segment_rules": {},
+    "affordability": {},
+    "product": {"max_amount_inr": 10000000, "min_rate_pct": 10.99, "max_rate_pct": 30.0, "min_tenure_months": 12, "max_tenure_months": 72},
+    "advisories": ["Income eligibility was sourced from a city-specific page and varies with Kotak salary-account relationship; the current national product page should control product terms."],
+    "evidence": [{"label": "Official national product page", "url": "https://www.kotak.bank.in/en/personal-banking/loans/personal-loan.html", "accessed_date": "2026-10-12"}, {"label": "Official Bangalore eligibility page", "url": "https://www.kotak.bank.in/en/personal-banking/loans/personal-loan/personal-loan-in-bangalore.html", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L006",
+    "lender_name": "IDFC FIRST Bank",
+    "product_name": "Higher-limit Personal Loan",
+    "supported_employment_types": ["salaried", "self_employed"],
+    "data_status": "verified",
+    "rules": [
+      {"field": "age_years", "operator": ">=", "value": 23, "strength": "hard", "label": "Age"},
+      {"field": "age_at_maturity_years", "operator": "<=", "value": 60, "strength": "hard", "label": "Age at maturity"}
+    ],
+    "segment_rules": {},
+    "affordability": {},
+    "product": {"max_amount_inr": 10000000, "min_rate_pct": 9.99, "max_rate_pct": null, "min_tenure_months": 12, "max_tenure_months": 84},
+    "advisories": ["CIBIL 730+ is described as ideal for higher limits and favourable terms, not as an unconditional rejection threshold.", "The June 2020 partner-training PDF is excluded from current rules."],
+    "evidence": [{"label": "Official current higher-limit product", "url": "https://www.idfcfirst.bank.in/personal-banking/loans/personal-loan/higher-limit", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L007",
+    "lender_name": "IndusInd Bank",
+    "product_name": "Online Instant Personal Loan",
+    "supported_employment_types": ["salaried", "self_employed"],
+    "data_status": "partial",
+    "rules": [
+      {"field": "age_years", "operator": ">=", "value": 21, "strength": "hard", "label": "Age"},
+      {"field": "age_years", "operator": "<=", "value": 60, "strength": "hard", "label": "Age"},
+      {"field": "monthly_income_inr", "operator": ">=", "value": 25000, "strength": "hard", "label": "Monthly income"},
+      {"field": "cibil_score", "operator": ">=", "value": 730, "strength": "hard", "label": "CIBIL score"}
+    ],
+    "segment_rules": {
+      "salaried": [
+        {"field": "total_work_months", "operator": ">=", "value": 24, "strength": "hard", "label": "Total work experience"},
+        {"field": "current_job_months", "operator": ">=", "value": 12, "strength": "hard", "label": "Current employer tenure"}
+      ]
+    },
+    "affordability": {},
+    "product": {"max_amount_inr": 500000, "min_rate_pct": 10.49, "max_rate_pct": null, "min_tenure_months": 12, "max_tenure_months": 48},
+    "advisories": ["Rules come from an amount-specific ₹50,000 page. The wider branch product advertises up to ₹50 lakh; this row intentionally scopes the online journey to ₹5 lakh.", "Published work-experience wording refers to an employer and is applied only to salaried profiles; no self-employed business-vintage threshold is inferred."],
+    "evidence": [{"label": "Official ₹50,000 journey", "url": "https://www.indusind.com/in/en/personal/loans/personal-loan/50000-personal-loan.html", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L008",
+    "lender_name": "YES BANK",
+    "product_name": "Personal Loan",
+    "supported_employment_types": ["salaried"],
+    "data_status": "verified",
+    "rules": [
+      {"field": "age_years", "operator": ">=", "value": 21, "strength": "hard", "label": "Age"},
+      {"field": "age_years", "operator": "<=", "value": 60, "strength": "hard", "label": "Age"},
+      {"field": "monthly_income_inr", "operator": ">=", "value": 25000, "strength": "hard", "label": "Stable monthly income"},
+      {"field": "resident_indian", "operator": "=", "value": true, "strength": "hard", "label": "Indian residency"}
+    ],
+    "segment_rules": {},
+    "affordability": {},
+    "product": {"max_amount_inr": 5000000, "min_rate_pct": 10.85, "max_rate_pct": 21.0, "min_tenure_months": 12, "max_tenure_months": 72},
+    "advisories": ["The published page prefers a high credit score but does not disclose a numeric hard cutoff."],
+    "evidence": [{"label": "Official product page", "url": "https://www.yes.bank.in/sites/yesbank/personal-banking/loans/personal-loan", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L009",
+    "lender_name": "Federal Bank",
+    "product_name": "FedPremia Personal Loan",
+    "supported_employment_types": ["salaried"],
+    "data_status": "verified",
+    "rules": [
+      {"field": "monthly_income_inr", "operator": ">=", "value": 25000, "strength": "hard", "label": "Net monthly salary"},
+      {"field": "age_at_maturity_years", "operator": "<=", "value": 60, "strength": "hard", "label": "Age at maturity"},
+      {"field": "current_job_months", "operator": ">=", "value": 36, "strength": "hard", "label": "Present-job tenure"},
+      {"field": "resident_indian", "operator": "=", "value": true, "strength": "hard", "label": "Indian residency"}
+    ],
+    "segment_rules": {},
+    "affordability": {},
+    "product": {"max_amount_inr": 2500000, "min_rate_pct": 10.49, "max_rate_pct": 17.99, "min_tenure_months": null, "max_tenure_months": 60},
+    "advisories": ["A separate Federal digital personal-loan product has different age, amount, rate and tenure rules and is not mixed here."],
+    "evidence": [{"label": "Official FedPremia page", "url": "https://www.federal.bank.in/-/fedpremia-personal-loans", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L010",
+    "lender_name": "RBL Bank",
+    "product_name": "Pre-qualified Personal Loan",
+    "supported_employment_types": ["salaried"],
+    "data_status": "verified",
+    "rules": [
+      {"field": "age_years", "operator": ">=", "value": 25, "strength": "hard", "label": "Age"},
+      {"field": "age_years", "operator": "<=", "value": 55, "strength": "hard", "label": "Age"},
+      {"field": "salary_account_with_lender", "operator": "=", "value": true, "strength": "hard", "label": "Existing RBL savings/salary relationship"},
+      {"field": "resident_indian", "operator": "=", "value": true, "strength": "hard", "label": "Indian residency"}
+    ],
+    "segment_rules": {},
+    "affordability": {},
+    "product": {"max_amount_inr": 500000, "min_rate_pct": 18.0, "max_rate_pct": 18.0, "min_tenure_months": 12, "max_tenure_months": 36},
+    "advisories": ["This is a pre-qualified offer for existing RBL savings or corporate salary-account holders, not a universal open-market product."],
+    "evidence": [{"label": "Official current product page", "url": "https://www.rbl.bank.in/personal-banking/loans/personal-loan", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L011",
+    "lender_name": "Bank of Baroda",
+    "product_name": "Baroda Personal Loan — branch product",
+    "supported_employment_types": ["salaried", "self_employed"],
+    "data_status": "verified",
+    "rules": [
+      {"field": "age_years", "operator": ">=", "value": 21, "strength": "hard", "label": "Age"}
+    ],
+    "segment_rules": {
+      "salaried": [
+        {"field": "age_at_maturity_years", "operator": "<=", "value": 60, "strength": "hard", "label": "Age at maturity"},
+        {"field": "total_work_months", "operator": ">=", "value": 12, "strength": "hard", "label": "Continuous service"}
+      ],
+      "self_employed": [
+        {"field": "age_at_maturity_years", "operator": "<=", "value": 65, "strength": "hard", "label": "Age at maturity"},
+        {"field": "business_vintage_months", "operator": ">=", "value": 12, "strength": "hard", "label": "Stable business vintage"}
+      ]
+    },
+    "affordability": {"foir_cap_pct": 40},
+    "product": {"max_amount_inr": 2000000, "min_rate_pct": 10.15, "max_rate_pct": 18.0, "min_tenure_months": 48, "max_tenure_months": 84},
+    "advisories": ["FOIR ranges from 40% to 75% by income, employer and salary relationship. The prototype conservatively uses 40%.", "Digital-product rules are stored separately in the research workbook and are not mixed into this row."],
+    "evidence": [{"label": "Official branch product page", "url": "https://bankofbaroda.bank.in/loans/personal-loan/baroda-personal-loan", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L012",
+    "lender_name": "Punjab National Bank",
+    "product_name": "Personal Loan for Public",
+    "supported_employment_types": ["salaried", "self_employed"],
+    "data_status": "partial",
+    "rules": [],
+    "segment_rules": {
+      "salaried": [{"field": "total_work_months", "operator": ">=", "value": 24, "strength": "hard", "label": "Total service for salary-through-PNB segment"}],
+      "self_employed": [{"field": "cibil_score", "operator": ">=", "value": 750, "strength": "hard", "label": "CIC score for eligible professional scheme"}]
+    },
+    "affordability": {"salary_multiple": 15},
+    "product": {"max_amount_inr": 1000000, "min_rate_pct": null, "max_rate_pct": null, "min_tenure_months": null, "max_tenure_months": 60},
+    "advisories": ["PNB exposes several current variants with different service, salary-relationship and amount rules; this row is not universal and requires scheme selection before a final decision."],
+    "evidence": [{"label": "Official product page", "url": "https://www.pnbindia.in/personalloanforpublic.html?page=personalloanforpublic.html", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L013",
+    "lender_name": "Canara Bank",
+    "product_name": "Canara Budget — Prime/Delight",
+    "supported_employment_types": ["salaried"],
+    "data_status": "verified",
+    "rules": [
+      {"field": "total_work_months", "operator": ">=", "value": 12, "strength": "hard", "label": "Confirmed service"}
+    ],
+    "segment_rules": {},
+    "affordability": {"salary_multiple": 25, "min_residual_income_pct": 25, "min_residual_income_inr": 10000},
+    "product": {"max_amount_inr": 5000000, "min_rate_pct": 9.7, "max_rate_pct": 14.7, "min_tenure_months": null, "max_tenure_months": 84},
+    "advisories": ["Applicant-specific maximum uses the lower of the advertised cap, 25 months’ salary and the published net-take-home requirement."],
+    "evidence": [{"label": "Official Canara Budget page", "url": "https://www.canarabank.bank.in/canara-budget", "accessed_date": "2026-10-12"}, {"label": "Official contracted rate range", "url": "https://www.canarabank.bank.in/pages/interest-rate-range-on-loans", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L014",
+    "lender_name": "Bajaj Finance",
+    "product_name": "Personal Loan",
+    "supported_employment_types": ["salaried", "self_employed"],
+    "data_status": "verified",
+    "rules": [
+      {"field": "age_years", "operator": ">=", "value": 21, "strength": "hard", "label": "Age"},
+      {"field": "age_at_maturity_years", "operator": "<=", "value": 80, "strength": "hard", "label": "Age at maturity"},
+      {"field": "cibil_score", "operator": ">=", "value": 650, "strength": "hard", "label": "CIBIL score"}
+    ],
+    "segment_rules": {},
+    "affordability": {},
+    "product": {"max_amount_inr": 5500000, "min_rate_pct": 10.0, "max_rate_pct": 30.5, "min_tenure_months": 12, "max_tenure_months": 108},
+    "advisories": ["The maximum-age rule is evaluated at the end of the requested tenure."],
+    "evidence": [{"label": "Official product page", "url": "https://www.bajajfinserv.in/personal-loan", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L015",
+    "lender_name": "Tata Capital",
+    "product_name": "Personal Loan — salaried",
+    "supported_employment_types": ["salaried"],
+    "data_status": "verified",
+    "rules": [
+      {"field": "age_years", "operator": ">=", "value": 21, "strength": "hard", "label": "Age"},
+      {"field": "age_years", "operator": "<=", "value": 58, "strength": "hard", "label": "Age"},
+      {"field": "monthly_income_inr", "operator": ">=", "value": 20000, "strength": "hard", "label": "Monthly income"},
+      {"field": "current_job_months", "operator": ">=", "value": 12, "strength": "hard", "label": "Current-job tenure"},
+      {"field": "total_work_months", "operator": ">=", "value": 24, "strength": "hard", "label": "Total experience"},
+      {"field": "resident_indian", "operator": "=", "value": true, "strength": "hard", "label": "Indian residency"}
+    ],
+    "segment_rules": {},
+    "affordability": {},
+    "product": {"max_amount_inr": 3500000, "min_rate_pct": 10.99, "max_rate_pct": null, "min_tenure_months": null, "max_tenure_months": 72},
+    "advisories": ["CIBIL 725+ is preferred, not an unconditional hard cutoff."],
+    "evidence": [{"label": "Official product page", "url": "https://www.tatacapital.com/personal-loan.html", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L016",
+    "lender_name": "Aditya Birla Finance",
+    "product_name": "Personal Loan",
+    "supported_employment_types": ["salaried"],
+    "data_status": "conflict",
+    "rules": [
+      {"field": "age_years", "operator": ">=", "value": 21, "strength": "hard", "label": "Age"},
+      {"field": "age_years", "operator": "<=", "value": 60, "strength": "hard", "label": "Age"},
+      {"field": "resident_indian", "operator": "=", "value": true, "strength": "hard", "label": "Indian citizenship"}
+    ],
+    "segment_rules": {},
+    "affordability": {},
+    "product": {"max_amount_inr": null, "min_rate_pct": null, "max_rate_pct": null, "min_tenure_months": 12, "max_tenure_months": 84},
+    "advisories": ["The same official page says 700+ in its eligibility table and approximately 650+ elsewhere, while noting lower scores may still be considered; no credit-score hard rejection is encoded.", "The page also mentions 21 or 23 minimum and 60 or 62 maximum depending on loan type; this row uses the general FAQ range."],
+    "evidence": [{"label": "Official eligibility page", "url": "https://www.adityabirlacapital.com/loans/personal-finance/personal-loan/eligibility-criteria", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L017",
+    "lender_name": "L&T Finance",
+    "product_name": "Personal Loan",
+    "supported_employment_types": ["salaried", "self_employed"],
+    "data_status": "conflict",
+    "rules": [],
+    "segment_rules": {
+      "salaried": [
+        {"field": "age_years", "operator": ">=", "value": 21, "strength": "hard", "label": "Age"},
+        {"field": "age_years", "operator": "<=", "value": 58, "strength": "hard", "label": "Age"},
+        {"field": "monthly_income_inr", "operator": ">=", "value": 25000, "strength": "hard", "label": "Net monthly income"}
+      ],
+      "self_employed": [
+        {"field": "age_years", "operator": ">=", "value": 25, "strength": "hard", "label": "Age"},
+        {"field": "age_years", "operator": "<=", "value": 65, "strength": "hard", "label": "Age"}
+      ]
+    },
+    "affordability": {},
+    "product": {"max_amount_inr": 3000000, "min_rate_pct": null, "max_rate_pct": null, "min_tenure_months": 12, "max_tenure_months": 72},
+    "advisories": ["Official pages variously show 10.50% and 11% starting rates, so the prototype leaves the rate unknown.", "750+ is preferred for best terms; scores below 700 may receive a higher rate or decline. It is not encoded as a universal hard cutoff.", "The eligibility and document pages disagree on the presentation of employment tenure; experience is advisory until reconciled."],
+    "evidence": [{"label": "Official documents and eligibility page", "url": "https://www.ltfinance.com/documents-required-for-personal-loan", "accessed_date": "2026-10-12"}, {"label": "Official eligibility calculator", "url": "https://www.ltfinance.com/personal-loan-eligibility-calculator", "accessed_date": "2026-10-12"}, {"label": "Official EMI calculator", "url": "https://www.ltfinance.com/personal-loan-emi-calculator", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L018",
+    "lender_name": "SMFG India Credit",
+    "product_name": "Personal Loan",
+    "supported_employment_types": ["salaried", "self_employed"],
+    "data_status": "verified",
+    "rules": [
+      {"field": "resident_indian", "operator": "=", "value": true, "strength": "hard", "label": "Indian residency"},
+      {"field": "cibil_score", "operator": ">=", "value": 700, "strength": "hard", "label": "Credit score"}
+    ],
+    "segment_rules": {
+      "salaried": [
+        {"field": "age_years", "operator": ">=", "value": 24, "strength": "hard", "label": "Age"},
+        {"field": "age_at_maturity_years", "operator": "<=", "value": 60, "strength": "hard", "label": "Age at maturity"},
+        {"field": "monthly_income_inr", "operator": ">=", "value": 25001, "strength": "hard", "label": "Net monthly income"},
+        {"field": "current_job_months", "operator": ">=", "value": 6, "strength": "hard", "label": "Current-employer experience"}
+      ],
+      "self_employed": [
+        {"field": "age_years", "operator": ">=", "value": 25, "strength": "hard", "label": "Age"},
+        {"field": "age_at_maturity_years", "operator": "<=", "value": 65, "strength": "hard", "label": "Age at maturity"},
+        {"field": "business_vintage_months", "operator": ">=", "value": 36, "strength": "hard", "label": "Business existence"}
+      ]
+    },
+    "affordability": {"foir_cap_pct": 60},
+    "product": {"max_amount_inr": 1000000, "min_rate_pct": 12.5, "max_rate_pct": 30.0, "min_tenure_months": 12, "max_tenure_months": 60},
+    "advisories": ["New-to-credit applicants with NH/-1 may still apply; the numeric score rule should be bypassed for an explicit no-history status in a future schema.", "Salaried EMI-to-income cap is published as a 60%–70% range; the prototype conservatively uses 60%."],
+    "evidence": [{"label": "Official eligibility page", "url": "https://www.smfgindiacredit.com/personal-loan-eligibility.aspx", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L019",
+    "lender_name": "HDB Financial Services",
+    "product_name": "Personal Loan",
+    "supported_employment_types": ["salaried", "self_employed"],
+    "data_status": "conflict",
+    "rules": [],
+    "segment_rules": {
+      "salaried": [
+        {"field": "age_years", "operator": ">=", "value": 21, "strength": "hard", "label": "Age"},
+        {"field": "age_at_maturity_years", "operator": "<=", "value": 60, "strength": "hard", "label": "Age at maturity"},
+        {"field": "monthly_income_inr", "operator": ">=", "value": 20000, "strength": "hard", "label": "Net monthly income"},
+        {"field": "total_work_months", "operator": ">=", "value": 12, "strength": "hard", "label": "Employment period"},
+        {"field": "current_job_months", "operator": ">=", "value": 1, "strength": "hard", "label": "Current salary-credit history"}
+      ],
+      "self_employed": [
+        {"field": "age_years", "operator": ">=", "value": 22, "strength": "hard", "label": "Age"},
+        {"field": "age_years", "operator": "<=", "value": 65, "strength": "hard", "label": "Age"},
+        {"field": "business_vintage_months", "operator": ">=", "value": 36, "strength": "hard", "label": "Business vintage"}
+      ]
+    },
+    "affordability": {},
+    "product": {"max_amount_inr": 2000000, "min_rate_pct": null, "max_rate_pct": null, "min_tenure_months": 12, "max_tenure_months": 60},
+    "advisories": ["Salaried income is ₹20,000 in named metros and ₹15,000 elsewhere. Because city is not collected, the prototype applies the stricter ₹20,000 threshold to avoid a false pass.", "The product body says ₹20 lakh while site promotion says ₹25 lakh; ₹20 lakh is retained conservatively.", "Self-employed minimum annual income and two-year profitability requirements are disclosed but not represented in the current applicant schema."],
+    "evidence": [{"label": "Official salaried product page", "url": "https://www.hdbfs.com/products/salaried-loan", "accessed_date": "2026-10-12"}, {"label": "Official personal-loan page", "url": "https://www.hdbfs.com/products/personal-loan", "accessed_date": "2026-10-12"}]
+  },
+  {
+    "lender_id": "L020",
+    "lender_name": "Navi",
+    "product_name": "Navi Cash Loan",
+    "supported_employment_types": ["salaried", "self_employed"],
+    "data_status": "insufficient",
+    "rules": [],
+    "segment_rules": {},
+    "affordability": {},
+    "product": {"max_amount_inr": 2000000, "min_rate_pct": null, "max_rate_pct": 26.0, "min_tenure_months": null, "max_tenure_months": 84},
+    "advisories": ["Official Navi educational articles contain conflicting generic thresholds and another article says Navi has no fixed eligibility criteria. No generic blog number is treated as Navi policy."],
+    "evidence": [{"label": "Official Navi Finserv product page", "url": "https://navi.com/personal-loan/Chennai", "accessed_date": "2026-10-12"}, {"label": "Official generic article — discovery only", "url": "https://navi.com/blog/what-is-personal-loan/", "accessed_date": "2026-10-12"}]
+  }
+]

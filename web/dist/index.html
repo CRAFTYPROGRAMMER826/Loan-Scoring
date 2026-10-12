@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Birbal Lens screens a borrower profile against publicly disclosed personal-loan rules from 20 Indian lenders."
+    />
+    <meta name="theme-color" content="#f4f0e6" />
+    <title>Birbal Lens — Know before you apply</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=5" />
+    <script src="./app.js?v=5" defer></script>
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Birbal Lens home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><circle cx="13" cy="13" r="7"></circle><path d="m18.5 18.5 7 7M9.5 10.5h7M9.5 13.5h5M9.5 16.5h3"></path></svg>
+        </span>
+        <span class="brand-copy"><strong>Birbal Lens</strong><small>public lending rules</small></span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#lenders">Our 20 lenders</a>
+        <a href="#screening">Check eligibility</a>
+        <a href="#calculation">How it works</a>
+      </nav>
+      <button class="nav-cta" data-scroll-to="screening">Run a check <span>↗</span></button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse-dot"></span> Evidence-linked prototype · India</div>
+          <h1>Check your loan eligibility.<br /><em>Find your best-fit lender.</em></h1>
+          <p class="hero-deck">
+            Compare your profile with public personal-loan rules from 20 Indian lenders, understand every result,
+            and estimate the possible interest difference before you apply.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-button" data-scroll-to="screening">Check my eligibility <span>→</span></button>
+            <a class="text-button" href="#lenders">See all 20 lenders <span>↘</span></a>
+          </div>
+          <p class="microcopy">Public-rule screening—not an approval prediction. No login, credit pull or application.</p>
+        </div>
+
+        <div class="hero-visual" aria-label="Illustration of a borrower profile being checked against lender rules">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="profile-card">
+            <div class="profile-card-head">
+              <span class="avatar">AK</span>
+              <span><strong>Profile snapshot</strong><small>Illustrative borrower</small></span>
+              <span class="shield">✓</span>
+            </div>
+            <div class="profile-line"><span>Monthly income</span><strong>₹80,000</strong></div>
+            <div class="profile-line"><span>Credit score</span><strong>780</strong></div>
+            <div class="profile-line"><span>Existing EMIs</span><strong>₹10,000</strong></div>
+            <div class="profile-score">
+              <span>Public rule coverage</span>
+              <div class="score-bar"><i></i></div>
+              <strong>Traceable</strong>
+            </div>
+          </div>
+          <div class="float-card float-pass"><span>✓</span><div><strong>Age rule</strong><small>Public threshold met</small></div></div>
+          <div class="float-card float-source"><span>↗</span><div><strong>Source attached</strong><small>Official lender page</small></div></div>
+          <div class="float-card float-private"><span>?</span><div><strong>Internal policy</strong><small>Marked unknown</small></div></div>
+        </div>
+      </section>
+
+      <section class="proof-strip" aria-label="Dataset summary">
+        <p>Prototype research snapshot</p>
+        <div><strong id="stat-lenders">20</strong><span>lenders reviewed</span></div>
+        <div><strong id="stat-rules">86</strong><span>sourced hard rules</span></div>
+        <div><strong id="stat-verified">12</strong><span>verified datasets</span></div>
+        <div><strong>0</strong><span>approval claims</span></div>
+      </section>
+
+      <section class="lender-directory-section" id="lenders">
+        <div class="section-intro">
+          <div><span class="section-number">01 / LENDERS</span><h2>The 20 lenders we actually check.</h2></div>
+          <p>The tool only compares the banks and NBFCs shown here. It does not silently claim coverage of the entire Indian market.</p>
+        </div>
+        <div class="directory-key"><span class="verified-key">Verified</span><span class="partial-key">Partial</span><span class="conflict-key">Conflict</span><span class="insufficient-key">Insufficient</span></div>
+        <div class="lender-directory-grid" id="lender-directory-grid"></div>
+        <div class="directory-action"><button class="primary-button" data-scroll-to="screening">Check against these lenders <span>→</span></button></div>
+      </section>
+
+      <section class="plain-idea-section" id="plain-idea">
+        <div class="section-intro">
+          <div><span class="section-number">THE IDEA, SIMPLY</span><h2>What happens after you click “check”?</h2></div>
+          <p>Five small steps. No banking vocabulary required.</p>
+        </div>
+        <div class="plain-idea-grid">
+          <article><span>1</span><h3>You enter a profile</h3><p>Age, income, work history and existing EMIs—plus an optional credit score, amount and tenure.</p></article>
+          <article><span>2</span><h3>We read public rules</h3><p>Your values are compared with the official minimums and maximums captured for each lender.</p></article>
+          <article><span>3</span><h3>You get reasons</h3><p>Every pass or failure shows the applicant value, lender requirement and original source URL.</p></article>
+          <article><span>4</span><h3>We compare costs</h3><p>Where a starting rate is published, we estimate EMI and total interest for the same loan and tenure.</p></article>
+          <article><span>5</span><h3>You get a shortlist</h3><p>The strongest matches are ranked for further investigation—not presented as approved loan offers.</p></article>
+        </div>
+      </section>
+
+      <section class="screening-section" id="screening">
+        <div class="section-intro">
+          <div>
+            <span class="section-number">02 / SCREEN</span>
+            <h2>Check your public-rule eligibility.</h2>
+          </div>
+          <p>Enter an illustrative profile. Nothing leaves this browser; the rules run locally.</p>
+        </div>
+
+        <div class="screening-shell">
+          <aside class="journey-rail" aria-label="Screening steps">
+            <div class="journey-brand"><span><svg viewBox="0 0 32 32"><circle cx="13" cy="13" r="7"></circle><path d="m18.5 18.5 7 7M9.5 10.5h7M9.5 13.5h5"></path></svg></span> Birbal Lens</div>
+            <ol>
+              <li class="active" data-step-marker="1"><span>1</span><div><strong>Your profile</strong><small>Income, work and credit</small></div></li>
+              <li data-step-marker="2"><span>2</span><div><strong>Loan goal</strong><small>Amount and tenure</small></div></li>
+              <li data-step-marker="3"><span>3</span><div><strong>Your results</strong><small>Explainable matches</small></div></li>
+            </ol>
+            <div class="rail-note">
+              <span>i</span>
+              <p>This does not access your bureau report or submit a loan application.</p>
+            </div>
+          </aside>
+
+          <div class="form-stage">
+            <form id="eligibility-form" novalidate>
+              <div class="form-step active" data-step="1">
+                <div class="form-heading">
+                  <span>Step 1 of 2</span>
+                  <h3>Tell us about the borrower</h3>
+                  <p>Use a sample profile if you do not want to enter personal figures.</p>
+                </div>
+
+                <div class="employment-toggle" role="radiogroup" aria-label="Employment type">
+                  <label><input type="radio" name="employment_type" value="salaried" checked /><span>Salaried</span></label>
+                  <label><input type="radio" name="employment_type" value="self_employed" /><span>Self-employed</span></label>
+                </div>
+
+                <div class="field-grid">
+                  <label class="field">
+                    <span>Age <button type="button" class="hint" data-tip="Your current completed age in years.">?</button></span>
+                    <div class="input-wrap"><input name="age_years" type="number" min="18" max="80" value="30" required /><i>years</i></div>
+                  </label>
+                  <label class="field">
+                    <span>Monthly take-home income</span>
+                    <div class="input-wrap prefix"><b>₹</b><input name="monthly_income_inr" type="number" min="0" step="1000" value="80000" required /></div>
+                  </label>
+                  <label class="field">
+                    <span>Existing monthly EMIs <button type="button" class="hint" data-tip="All recurring debt repayments, excluding the new loan.">?</button></span>
+                    <div class="input-wrap prefix"><b>₹</b><input name="existing_monthly_emis_inr" type="number" min="0" step="500" value="10000" required /></div>
+                  </label>
+                  <label class="field">
+                    <span>CIBIL score <em>Optional</em> <button type="button" class="hint" data-tip="Leave this blank if you do not know your score. We will not treat a missing score as zero.">?</button></span>
+                    <div class="input-wrap"><input name="cibil_score" type="number" min="300" max="900" placeholder="e.g. 780" inputmode="numeric" /><i>/ 900</i></div>
+                    <small class="field-note">Unknown? Leave it blank. A lender with a published score cut-off will show “not enough data”, not a rejection.</small>
+                  </label>
+                  <label class="field salaried-field">
+                    <span>Total work experience</span>
+                    <div class="input-wrap"><input name="total_work_months" type="number" min="0" value="60" required /><i>months</i></div>
+                  </label>
+                  <label class="field salaried-field">
+                    <span>Time in current job</span>
+                    <div class="input-wrap"><input name="current_job_months" type="number" min="0" value="24" required /><i>months</i></div>
+                  </label>
+                  <label class="field business-field" hidden>
+                    <span>Business vintage</span>
+                    <div class="input-wrap"><input name="business_vintage_months" type="number" min="0" value="48" /><i>months</i></div>
+                  </label>
+                </div>
+
+                <div class="relationship-box">
+                  <strong>Existing lender relationships <em>Optional</em></strong>
+                  <small>Select only accounts you already hold. Relationship-only products stay out when no box is selected.</small>
+                  <label class="check-row">
+                    <input name="relationship_lender_ids" value="L001" type="checkbox" />
+                    <span><strong>SBI salary account</strong><small>Required by the captured SBI Personal Loan product.</small></span>
+                  </label>
+                  <label class="check-row">
+                    <input name="relationship_lender_ids" value="L010" type="checkbox" />
+                    <span><strong>RBL savings or corporate salary account</strong><small>Required by the captured pre-qualified RBL product.</small></span>
+                  </label>
+                </div>
+
+                <div class="form-actions">
+                  <button type="button" class="sample-button" id="load-sample">Reset sample</button>
+                  <button type="button" class="primary-button next-step">Continue <span>→</span></button>
+                </div>
+              </div>
+
+              <div class="form-step" data-step="2">
+                <div class="form-heading">
+                  <span>Step 2 of 2</span>
+                  <h3>What are you looking to borrow?</h3>
+                  <p>This lets us test product limits and compare the publicly visible starting terms.</p>
+                </div>
+
+                <div class="goal-card">
+                  <label class="lender-select-field">
+                    <span><strong>Which lending entity should we check?</strong><small>Choose one for a focused explanation, or compare the entire researched set.</small></span>
+                    <select name="lender_id" id="lender-select">
+                      <option value="all">Compare all 20 lenders</option>
+                    </select>
+                  </label>
+                  <label class="range-field">
+                    <span><strong>Requested amount</strong><output id="amount-output">₹5,00,000</output></span>
+                    <input name="requested_amount_inr" type="range" min="50000" max="5000000" step="50000" value="500000" />
+                    <div class="range-ends"><small>₹50 thousand</small><small>₹50 lakh</small></div>
+                  </label>
+                  <label class="range-field">
+                    <span><strong>Preferred tenure</strong><output id="tenure-output">36 months</output></span>
+                    <input name="requested_tenure_months" type="range" min="6" max="84" step="6" value="36" />
+                    <div class="range-ends"><small>6 months</small><small>84 months</small></div>
+                  </label>
+                </div>
+
+                <div class="calculation-note">
+                  <span>∿</span>
+                  <div><strong>How maximum amount is handled</strong><p>We calculate it only when a lender publicly discloses FOIR or a salary multiple. Otherwise, it stays “not publicly determinable.”</p></div>
+                </div>
+
+                <div class="form-actions">
+                  <button type="button" class="sample-button prev-step">← Back</button>
+                  <button type="submit" class="primary-button">See my eligibility results <span>→</span></button>
+                </div>
+              </div>
+            </form>
+
+            <section class="results-stage" id="results" hidden aria-live="polite">
+              <div class="result-loading" id="result-loading">
+                <div class="lens-loader"><span></span></div>
+                <strong>Reading public lender rules…</strong>
+                <small>Separating published criteria from private underwriting</small>
+              </div>
+              <div id="result-content" hidden></div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="calculation-section" id="calculation">
+        <div class="section-intro">
+          <div>
+            <span class="section-number">03 / CALCULATION</span>
+            <h2>How is the screening calculated?</h2>
+          </div>
+          <p>There is no trained approval model or secret customer dataset. This is an explainable public-rule screening engine.</p>
+        </div>
+
+        <div class="calculation-callout">
+          <div class="formula-mark">ƒ</div>
+          <div>
+            <strong>Applicant value + lender’s published requirement → pass, fail or unknown</strong>
+            <p>For every selected lender, the engine compares your value with each hard rule captured from an official page. It shows the exact comparison and links back to that page.</p>
+          </div>
+          <div class="formula-example"><span>Example</span><strong>Age 30 ≥ minimum age 21</strong><small>Result: rule passed</small></div>
+        </div>
+
+        <div class="parameter-grid">
+          <article><span>01</span><div class="parameter-icon">◷</div><h3>Age</h3><p>Your current age and, where published, your age when the requested loan tenure ends.</p><small>Example: age 57 + 4-year tenure = age 61 at closure.</small></article>
+          <article><span>02</span><div class="parameter-icon">◉</div><h3>Employment type</h3><p>Whether the product publicly supports salaried, self-employed, or both kinds of borrowers.</p><small>Example: a salaried-only product cannot be claimed for a business owner.</small></article>
+          <article><span>03</span><div class="parameter-icon">₹</div><h3>Monthly income</h3><p>Your take-home income compared with the lender’s published minimum income requirement.</p><small>Example: ₹30,000 passes a published ₹25,000 minimum.</small></article>
+          <article><span>04</span><div class="parameter-icon">↗</div><h3>CIBIL score <em>Optional</em></h3><p>Your bureau score is checked only when you provide it and the lender publishes a numeric cut-off. “Ideal” scores stay advisory.</p><small>Blank score = unknown for that rule, never zero. Example: 700+ preferred is not an automatic rejection.</small></article>
+          <article><span>05</span><div class="parameter-icon">≋</div><h3>Existing EMIs</h3><p>Your current monthly debt payments. These reduce how much room remains for a new EMI.</p><small>Includes recurring loan and credit obligations—not normal living expenses.</small></article>
+          <article><span>06</span><div class="parameter-icon">%</div><h3>FOIR</h3><p>Fixed Obligation to Income Ratio: the share of monthly income allowed for all EMIs together.</p><small>₹80k income × 65% − ₹10k existing EMIs = ₹42k new-EMI room.</small></article>
+          <article><span>07</span><div class="parameter-icon">⌁</div><h3>Work experience</h3><p>Total time working and time with the current employer, checked separately when a lender publishes both.</p><small>Example: 24 months total and 12 months in the current job.</small></article>
+          <article><span>08</span><div class="parameter-icon">▦</div><h3>Business vintage</h3><p>For self-employed applicants, how long the business has operated when this rule is published.</p><small>Example: a lender may require two or three completed years.</small></article>
+          <article><span>09</span><div class="parameter-icon">◎</div><h3>Lender relationship</h3><p>Some products are only public for existing salary-account or pre-qualified customers.</p><small>The interface lets you include or exclude these relationship-only products.</small></article>
+          <article><span>10</span><div class="parameter-icon">↔</div><h3>Amount and tenure</h3><p>The requested amount and months are checked against product limits and maturity-age rules.</p><small>They also drive the FOIR-based amount calculation where possible.</small></article>
+        </div>
+
+        <div class="decision-legend">
+          <div class="legend-pass"><span>✓</span><p><strong>Passes public rules</strong>No captured hard requirement failed. This is not a loan approval.</p></div>
+          <div class="legend-fail"><span>×</span><p><strong>Fails a public rule</strong>At least one published minimum or maximum was not met.</p></div>
+          <div class="legend-unknown"><span>?</span><p><strong>Insufficient public data</strong>The lender does not reveal enough stable information to decide.</p></div>
+        </div>
+
+        <div class="best-fit-method">
+          <div class="best-fit-copy">
+            <span>How “best fit” is chosen</span>
+            <h3>A fixed ranking order—not an unexplained score.</h3>
+            <p>First pass the hard public rules. Then check whether the requested amount and tenure fit the public product limits. Prefer stronger evidence, and finally use the lower advertised starting rate as a cost tie-breaker.</p>
+          </div>
+          <ol>
+            <li><strong>1. Eligibility gate</strong><small>No captured hard rule may fail.</small></li>
+            <li><strong>2. Loan-fit gate</strong><small>Requested amount and tenure must fit public limits where known.</small></li>
+            <li><strong>3. Evidence confidence</strong><small>Verified → partial → conflict → insufficient.</small></li>
+            <li><strong>4. Cost tie-breaker</strong><small>Lower advertised starting rate ranks first.</small></li>
+          </ol>
+          <div class="finance-formulas">
+            <div><span>Reducing-balance EMI</span><code>P × r × (1+r)ⁿ ÷ ((1+r)ⁿ − 1)</code></div>
+            <div><span>Total interest</span><code>(EMI × months) − principal</code></div>
+            <div><span>Illustrative interest difference</span><code>comparison interest − best-fit interest</code></div>
+          </div>
+          <p class="formula-disclaimer">The comparison uses the same principal and tenure and each lender’s advertised minimum rate. Processing fees, insurance, taxes, floating-rate changes and personalised pricing are excluded.</p>
+        </div>
+      </section>
+
+      <section class="coverage-section" id="coverage">
+        <div class="section-intro inverse">
+          <div><span class="section-number">04 / EVIDENCE</span><h2>Confidence is a feature.</h2></div>
+          <p>Every lender is labelled by the quality of public evidence—not flattened into false certainty.</p>
+        </div>
+        <div class="coverage-grid">
+          <article class="coverage-lead">
+            <span class="status-pill status-verified">Verified</span>
+            <h3>Rules you can defend in the room.</h3>
+            <p>Hard cut-offs come from current official lender pages. Each result carries the source, access date and scope used by the model.</p>
+            <button class="outline-light" data-scroll-to="screening">Try the live screening</button>
+          </article>
+          <div class="coverage-stack" id="coverage-stack">
+            <article><span class="coverage-count">12</span><div><strong>Verified</strong><small>Current official evidence captured</small></div><i class="green"></i></article>
+            <article><span class="coverage-count">4</span><div><strong>Partial</strong><small>Useful rules; terms still incomplete</small></div><i class="amber"></i></article>
+            <article><span class="coverage-count">3</span><div><strong>Conflict</strong><small>Official statements disagree</small></div><i class="orange"></i></article>
+            <article><span class="coverage-count">1</span><div><strong>Insufficient</strong><small>No defensible public cut-off</small></div><i class="gray"></i></article>
+          </div>
+        </div>
+        <div class="lender-ticker" id="lender-ticker" aria-label="Lenders in the dataset"></div>
+      </section>
+
+      <section class="method-section" id="method">
+        <div class="section-intro">
+          <div><span class="section-number">05 / METHOD</span><h2>A decision trail, not a black box.</h2></div>
+          <p>The prototype makes uncertainty visible instead of inventing precision.</p>
+        </div>
+        <div class="method-flow">
+          <article><span>01</span><div class="method-icon">⌁</div><h3>Capture</h3><p>Collect current criteria from official product pages, rate sheets, terms, FAQs and true eligibility calculators.</p></article>
+          <i class="flow-arrow">→</i>
+          <article><span>02</span><div class="method-icon">≡</div><h3>Normalize</h3><p>Turn age, income, work history, score and affordability language into typed, scoped rules.</p></article>
+          <i class="flow-arrow">→</i>
+          <article><span>03</span><div class="method-icon">◇</div><h3>Screen</h3><p>Test the profile against hard public rules. Soft guidance and conflicts never become automatic rejections.</p></article>
+          <i class="flow-arrow">→</i>
+          <article><span>04</span><div class="method-icon">↗</div><h3>Explain</h3><p>Return the rule outcome, source quality, advertised terms and what remains unknowable before application.</p></article>
+        </div>
+        <div class="boundary-card">
+          <div><span class="boundary-mark">!</span><div><strong>The honest boundary</strong><p>Passing every captured public rule does not mean approval. Bureau details, fraud checks, employer categories, geography and internal scorecards may still change the lender’s decision.</p></div></div>
+          <a href="#screening">Run a transparent check →</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-brand"><span class="brand-mark"><svg viewBox="0 0 32 32"><circle cx="13" cy="13" r="7"></circle><path d="m18.5 18.5 7 7M9.5 10.5h7M9.5 13.5h5"></path></svg></span><div><strong>Birbal Lens</strong><small>An explainable lending research prototype</small></div></div>
+      <p>Built from public sources. Not financial advice, a loan offer, or an approval prediction.</p>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+
+    <div class="toast" id="toast" role="status"></div>
+  </body>
+</html>
