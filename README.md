@@ -246,24 +246,6 @@ node --check web/dist/app.js
 
 Expected result: 20 lender rows, 86 sourced rule rows, 10 generated profile outputs and 10 passing tests.
 
-## Deploy the static app on Vercel
-
-This repository includes `vercel.json`, so the static `web/dist` directory can be deployed without a build step.
-
-CLI option:
-
-```bash
-npx vercel
-npx vercel --prod
-```
-
-Dashboard option:
-
-- Import the GitHub repository.
-- Choose **Other** as the framework preset.
-- Keep the repository root as the project root.
-- Use `web/dist` as the output directory.
-- Leave the build command empty.
 
 ## Limitations
 
